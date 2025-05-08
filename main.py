@@ -10,8 +10,8 @@ from PySide6.QtCore import QStringListModel, QTimer
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-FILTERED_POKEDEX_PATH = os.path.join(BASE_DIR, "filtered_pokedex.json")
-FILTERED_LEARNSET_PATH = os.path.join(BASE_DIR, "filtered_learnset.json")
+FILTERED_POKEDEX_PATH = os.path.join(BASE_DIR, "data/filtered_pokedex.json")
+FILTERED_LEARNSET_PATH = os.path.join(BASE_DIR, "data/filtered_learnset.json")
 
 """TODO:
     Sort by selected stat
