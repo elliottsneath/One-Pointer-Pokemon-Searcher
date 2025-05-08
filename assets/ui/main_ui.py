@@ -54,6 +54,10 @@ class Ui_PokemonSearcher(object):
 
         self.filterLayout = QHBoxLayout()
         self.filterLayout.setObjectName(u"filterLayout")
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.filterLayout.addItem(self.horizontalSpacer_2)
+
 
         self.verticalLayout.addLayout(self.filterLayout)
 

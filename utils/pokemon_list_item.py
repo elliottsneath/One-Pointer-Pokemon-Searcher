@@ -3,8 +3,15 @@ from PySide6.QtGui import QFont, QPixmap, Qt
 import os
 
 class PokemonListItem(QWidget):
-    def __init__(self, name, types, base_abilities, hidden_abilities, stats, parent=None):
+    def __init__(self, name: str, types: list, base_abilities: list, hidden_abilities: list, stats:list, moves, parent=None):
         super(PokemonListItem, self).__init__(parent)
+
+        self.name = name
+        self.types = types
+        self.base_abilities = base_abilities
+        self.hidden_abilities = hidden_abilities
+        self.stats = stats
+        self.moves = moves
 
         layout = QHBoxLayout(self)
         layout.setContentsMargins(10, 0, 10, 0)

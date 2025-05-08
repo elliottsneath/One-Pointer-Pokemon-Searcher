@@ -4,7 +4,7 @@ import os
 from utils.pokemon_list_item import PokemonListItem
 from assets.ui.main_ui import Ui_PokemonSearcher
 from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QCompleter, QWidget, \
-                              QHBoxLayout, QPushButton, QLabel
+                              QHBoxLayout, QPushButton, QLabel, QSizePolicy
 from PySide6.QtGui import Qt
 from PySide6.QtCore import QStringListModel, QTimer
 
@@ -12,6 +12,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 FILTERED_POKEDEX_PATH = os.path.join(BASE_DIR, "filtered_pokedex.json")
 FILTERED_LEARNSET_PATH = os.path.join(BASE_DIR, "filtered_learnset.json")
+
+"""TODO:
+    Sort by selected stat
+    Implement list widget item click, connect to window / tab with pokemon info
+"""
 
 class MainWindow(QMainWindow, Ui_PokemonSearcher):
     def __init__(self):
@@ -39,11 +44,9 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
             with open(FILTERED_LEARNSET_PATH, 'r') as f:
                 learnset_data = json.load(f)
 
-            for _, data in learnset_data.items():
-                moves = data.get("learnset", {})
-                for move in moves.keys():
-                    pokemon_moves.add(move)
-            
+            for moves in learnset_data.values():
+                pokemon_moves.update(moves)
+
             self.pokemon_moves = sorted(pokemon_moves)
 
         except FileNotFoundError:
@@ -69,9 +72,9 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
             self.pokemon_abilities = sorted(pokemon_abilities)
 
         except FileNotFoundError:
-            print(f"Error: {FILTERED_LEARNSET_PATH} not found.")
+            print(f"Error: {FILTERED_POKEDEX_PATH} not found.")
         except json.JSONDecodeError:
-            print(f"Error parsing JSON in {FILTERED_LEARNSET_PATH}.")
+            print(f"Error parsing JSON in {FILTERED_POKEDEX_PATH}.")
 
     def initialise_completer(self):
         self.completer = QCompleter(self)
@@ -88,6 +91,8 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         try:
             with open(FILTERED_POKEDEX_PATH, 'r') as f:
                 pokedex = json.load(f)
+            with open(FILTERED_LEARNSET_PATH, 'r') as f:
+                learnset_data = json.load(f)
 
             for pokemon, data in pokedex.items():
                 name = pokemon.capitalize()
@@ -104,8 +109,9 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                         base_abilities.append(value)
 
                 stats = list(data.get("baseStats", {}).values())
+                moves = learnset_data.get(pokemon, [])
 
-                custom_widget = PokemonListItem(name, types, base_abilities, hidden_abilities, stats)
+                custom_widget = PokemonListItem(name, types, base_abilities, hidden_abilities, stats, moves)
 
                 list_item = QListWidgetItem(self.pokemonListWidget)
                 list_item.setSizeHint(custom_widget.sizeHint())
@@ -118,9 +124,21 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         except json.JSONDecodeError as e:
             print(f"Error parsing JSON: {e}")
 
-
     def clear_search(self):
         self.searchBar.clear()
+        self.applied_filters = []
+
+        for i in reversed(range(self.filterLayout.count())):
+            item = self.filterLayout.itemAt(i)
+            widget = item.widget()
+
+            if widget is None:
+                continue
+
+            self.filterLayout.takeAt(i)
+            widget.deleteLater()
+
+        self.update_pokemon_list()
 
     def filter_pokemon(self, text):
         if len(text) < 3:
@@ -156,42 +174,89 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
 
         self.completer.setModel(QStringListModel(refined_list))
 
-
     def add_to_filter_list(self, selected_item):
         self.applied_filters.append(selected_item)
-        print(f"Added to filter list: {selected_item}")
 
         filter_widget = QWidget(self)
-        filter_widget.setStyleSheet("background-color: lightgrey; border-radius: 5px; padding: 5px;")
         filter_layout = QHBoxLayout(filter_widget)
-        filter_layout.setContentsMargins(5, 5, 5, 5)
+        filter_layout.setContentsMargins(2, 2, 2, 2)
         filter_layout.setSpacing(5)
+        filter_layout.setAlignment(Qt.AlignLeft)
 
         filter_label = QLabel(selected_item, filter_widget)
-        filter_label.setStyleSheet("color: black;")
+        filter_label.setStyleSheet(
+            """
+            color: black;
+            font-size: 10px;
+            background-color: rgba(211, 211, 211, 0.8);
+            border-radius: 5px;
+            padding: 2px;
+            """
+        )
+        filter_label.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         filter_layout.addWidget(filter_label)
 
-        remove_button = QPushButton("X", filter_widget)
-        remove_button.setStyleSheet(
-            "background-color: red; color: white; border: none; border-radius: 3px; padding: 2px 5px;"
+        remove_label = QLabel(filter_widget)
+        remove_label.setText("X")
+        remove_label.setAlignment(Qt.AlignCenter)
+        remove_label.setStyleSheet(
+            """
+            color: rgba(211, 211, 211, 0.8);
+            background-color: rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            """
         )
-        remove_button.setFixedSize(20, 20)
-        filter_layout.addWidget(remove_button)
+        remove_label.setFixedSize(16, 16)
+        filter_layout.addWidget(remove_label)
+        spacer_index = self.filterLayout.count() - 1
+        self.filterLayout.insertWidget(spacer_index, filter_widget)
 
-        self.filterLayout.addWidget(filter_widget)
-
-        remove_button.clicked.connect(lambda: self.remove_filter(filter_widget, selected_item))
+        remove_label.mousePressEvent = lambda event: self.remove_filter(filter_widget, selected_item)
 
         QTimer.singleShot(10, lambda: self.searchBar.setText(""))
+        self.update_pokemon_list()
 
     def remove_filter(self, filter_widget, selected_item):
         if selected_item in self.applied_filters:
             self.applied_filters.remove(selected_item)
-            print(f"Removed from filter list: {selected_item}")
 
         self.filterLayout.removeWidget(filter_widget)
         filter_widget.deleteLater()
 
+        self.update_pokemon_list()
+
+    def update_pokemon_list(self):
+        for i in range(self.pokemonListWidget.count()):
+            list_item = self.pokemonListWidget.item(i)
+            custom_widget = self.pokemonListWidget.itemWidget(list_item)
+
+            name = custom_widget.name
+            types = custom_widget.types
+            base_abilities = custom_widget.base_abilities
+            hidden_abilities = custom_widget.hidden_abilities
+            moves = custom_widget.moves
+
+            matches_filter = True
+            for filter_item in self.applied_filters:
+                print(filter_item)
+                keyword, category = filter_item.split(" - ")
+                keyword = keyword.strip().lower()
+                category = category.strip().lower()
+
+                if category == "pokemon" and keyword not in name.lower():
+                    matches_filter = False
+                elif category == "type" and keyword not in [t.lower() for t in types]:
+                    matches_filter = False
+                elif category == "ability" and keyword not in [a.lower() for a in base_abilities + hidden_abilities]:
+                    matches_filter = False
+                elif category == "move" and keyword not in [m.lower() for m in moves]:
+                    matches_filter = False
+
+            # Hide or show the item based on the filter match
+            list_item.setHidden(not matches_filter)
 
 def handle_exception(exc_type, exc_value, exc_traceback):
     import traceback
@@ -205,8 +270,8 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 
 def main():
     app = QApplication(sys.argv)
-    #app.setWindowIcon(QIcon('assets/images/potato_can.png'))
-    #icon = QPixmap('assets/images/potato_can.png')
+    #app.setWindowIcon(QIcon('assets/images/...'))
+    #icon = QPixmap('assets/images/...')
     #resized_icon = icon.scaled(icon.size() * 0.5, Qt.KeepAspectRatio)
     #spl = QSplashScreen(resized_icon)
     #spl.show()
