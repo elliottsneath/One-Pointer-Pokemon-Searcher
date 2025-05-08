@@ -3,8 +3,10 @@ import json
 import os
 from utils.pokemon_list_item import PokemonListItem
 from assets.ui.main_ui import Ui_PokemonSearcher
-from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QCompleter
+from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QCompleter, QWidget, \
+                              QHBoxLayout, QPushButton, QLabel
 from PySide6.QtGui import Qt
+from PySide6.QtCore import QStringListModel, QTimer
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,12 +20,15 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
 
         self.setWindowTitle("One Pointer Pokemon Searcher")
 
-        self.initial_assets()
-        self.initial_connections()
+        self.initialise_assets()
+        self.initialise_completer()
+        self.initialise_connections()
 
         self.populate_pokemon_list()
 
-    def initial_assets(self):
+    def initialise_assets(self):
+        self.applied_filters = []
+
         pokemon_moves = set()
         pokemon_names = []
         pokemon_types = ["Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground",
@@ -68,7 +73,14 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         except json.JSONDecodeError:
             print(f"Error parsing JSON in {FILTERED_LEARNSET_PATH}.")
 
-    def initial_connections(self):
+    def initialise_completer(self):
+        self.completer = QCompleter(self)
+        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.completer.setFilterMode(Qt.MatchContains)
+        self.completer.activated.connect(self.add_to_filter_list)
+        self.searchBar.setCompleter(self.completer)
+    
+    def initialise_connections(self):
         self.clearSearchButton.clicked.connect(self.clear_search)
         self.searchBar.textChanged.connect(self.filter_pokemon)
 
@@ -112,29 +124,73 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
 
     def filter_pokemon(self, text):
         if len(text) < 3:
+            self.completer.setModel(QStringListModel([]))
             return
-        mega_list = []
+
+        def get_filtered_list(items, label):
+            return [f"{item} - {label}" for item in items]
+
+        filter_list = []
 
         if self.pokemonCheckbox.isChecked():
-            mega_list += self.pokemon_names
+            filter_list += get_filtered_list(self.pokemon_names, "Pokemon")
 
         if self.movesCheckbox.isChecked():
-            mega_list += self.pokemon_moves
+            filter_list += get_filtered_list(self.pokemon_moves, "Move")
 
         if self.typesCheckbox.isChecked():
-            mega_list += self.pokemon_types
+            filter_list += get_filtered_list(self.pokemon_types, "Type")
 
         if self.abilitiesCheckbox.isChecked():
-            mega_list += self.pokemon_abilities
-            
-        if not mega_list:
-            mega_list = self.pokemon_names + self.pokemon_moves + self.pokemon_types + self.pokemon_abilities
-        
-        completer = QCompleter(mega_list, self)
-        completer.setCaseSensitivity(Qt.CaseInsensitive)
-        completer.setFilterMode(Qt.MatchContains)
+            filter_list += get_filtered_list(self.pokemon_abilities, "Ability")
 
-        self.searchBar.setCompleter(completer)
+        if not filter_list:
+            filter_list = (
+                get_filtered_list(self.pokemon_names, "Pokemon")
+                + get_filtered_list(self.pokemon_moves, "Move")
+                + get_filtered_list(self.pokemon_types, "Type")
+                + get_filtered_list(self.pokemon_abilities, "Ability")
+            )
+
+        refined_list = [item for item in filter_list if text.lower() in item.lower()]
+
+        self.completer.setModel(QStringListModel(refined_list))
+
+
+    def add_to_filter_list(self, selected_item):
+        self.applied_filters.append(selected_item)
+        print(f"Added to filter list: {selected_item}")
+
+        filter_widget = QWidget(self)
+        filter_widget.setStyleSheet("background-color: lightgrey; border-radius: 5px; padding: 5px;")
+        filter_layout = QHBoxLayout(filter_widget)
+        filter_layout.setContentsMargins(5, 5, 5, 5)
+        filter_layout.setSpacing(5)
+
+        filter_label = QLabel(selected_item, filter_widget)
+        filter_label.setStyleSheet("color: black;")
+        filter_layout.addWidget(filter_label)
+
+        remove_button = QPushButton("X", filter_widget)
+        remove_button.setStyleSheet(
+            "background-color: red; color: white; border: none; border-radius: 3px; padding: 2px 5px;"
+        )
+        remove_button.setFixedSize(20, 20)
+        filter_layout.addWidget(remove_button)
+
+        self.filterLayout.addWidget(filter_widget)
+
+        remove_button.clicked.connect(lambda: self.remove_filter(filter_widget, selected_item))
+
+        QTimer.singleShot(10, lambda: self.searchBar.setText(""))
+
+    def remove_filter(self, filter_widget, selected_item):
+        if selected_item in self.applied_filters:
+            self.applied_filters.remove(selected_item)
+            print(f"Removed from filter list: {selected_item}")
+
+        self.filterLayout.removeWidget(filter_widget)
+        filter_widget.deleteLater()
 
 
 def handle_exception(exc_type, exc_value, exc_traceback):

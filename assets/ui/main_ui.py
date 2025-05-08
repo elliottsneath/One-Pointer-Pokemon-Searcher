@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
     QLineEdit, QListWidget, QListWidgetItem, QMainWindow,
-    QSizePolicy, QVBoxLayout, QWidget)
+    QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 
 from assets.ui.animated_button import AnimatedHoverButton
 
@@ -52,44 +52,58 @@ class Ui_PokemonSearcher(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
+        self.filterLayout = QHBoxLayout()
+        self.filterLayout.setObjectName(u"filterLayout")
+
+        self.verticalLayout.addLayout(self.filterLayout)
+
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.pokemonCheckbox = QCheckBox(self.centralwidget)
-        self.pokemonCheckbox.setObjectName(u"pokemonCheckbox")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        self.label_5 = QLabel(self.centralwidget)
+        self.label_5.setObjectName(u"label_5")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.pokemonCheckbox.sizePolicy().hasHeightForWidth())
-        self.pokemonCheckbox.setSizePolicy(sizePolicy1)
+        sizePolicy1.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy1)
+        self.label_5.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_5)
+
+        self.pokemonCheckbox = QCheckBox(self.centralwidget)
+        self.pokemonCheckbox.setObjectName(u"pokemonCheckbox")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.pokemonCheckbox.sizePolicy().hasHeightForWidth())
+        self.pokemonCheckbox.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_3.addWidget(self.pokemonCheckbox)
 
         self.typesCheckbox = QCheckBox(self.centralwidget)
         self.typesCheckbox.setObjectName(u"typesCheckbox")
-        sizePolicy1.setHeightForWidth(self.typesCheckbox.sizePolicy().hasHeightForWidth())
-        self.typesCheckbox.setSizePolicy(sizePolicy1)
+        sizePolicy2.setHeightForWidth(self.typesCheckbox.sizePolicy().hasHeightForWidth())
+        self.typesCheckbox.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_3.addWidget(self.typesCheckbox)
 
         self.abilitiesCheckbox = QCheckBox(self.centralwidget)
         self.abilitiesCheckbox.setObjectName(u"abilitiesCheckbox")
-        sizePolicy1.setHeightForWidth(self.abilitiesCheckbox.sizePolicy().hasHeightForWidth())
-        self.abilitiesCheckbox.setSizePolicy(sizePolicy1)
+        sizePolicy2.setHeightForWidth(self.abilitiesCheckbox.sizePolicy().hasHeightForWidth())
+        self.abilitiesCheckbox.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_3.addWidget(self.abilitiesCheckbox)
 
         self.movesCheckbox = QCheckBox(self.centralwidget)
         self.movesCheckbox.setObjectName(u"movesCheckbox")
-        sizePolicy1.setHeightForWidth(self.movesCheckbox.sizePolicy().hasHeightForWidth())
-        self.movesCheckbox.setSizePolicy(sizePolicy1)
+        sizePolicy2.setHeightForWidth(self.movesCheckbox.sizePolicy().hasHeightForWidth())
+        self.movesCheckbox.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_3.addWidget(self.movesCheckbox)
 
-        self.label_5 = QLabel(self.centralwidget)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_3.addWidget(self.label_5)
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
@@ -99,11 +113,11 @@ class Ui_PokemonSearcher(object):
         self.horizontalLayout_2.setContentsMargins(10, -1, 10, -1)
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
-        self.label_2.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy3)
         self.label_2.setMinimumSize(QSize(120, 0))
         self.label_2.setBaseSize(QSize(0, 0))
         self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -112,8 +126,8 @@ class Ui_PokemonSearcher(object):
 
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        sizePolicy2.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy3)
         self.label.setMinimumSize(QSize(100, 0))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -121,8 +135,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
-        sizePolicy2.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy3)
         self.label_3.setMinimumSize(QSize(200, 0))
         self.label_3.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -130,8 +144,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_6 = QLabel(self.centralwidget)
         self.label_6.setObjectName(u"label_6")
-        sizePolicy2.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
-        self.label_6.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy3)
         self.label_6.setMinimumSize(QSize(30, 0))
         self.label_6.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -139,8 +153,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
-        sizePolicy2.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
-        self.label_4.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_4.sizePolicy().hasHeightForWidth())
+        self.label_4.setSizePolicy(sizePolicy3)
         self.label_4.setMinimumSize(QSize(30, 0))
         self.label_4.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -148,8 +162,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_7 = QLabel(self.centralwidget)
         self.label_7.setObjectName(u"label_7")
-        sizePolicy2.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
-        self.label_7.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy3)
         self.label_7.setMinimumSize(QSize(30, 0))
         self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -157,8 +171,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_8 = QLabel(self.centralwidget)
         self.label_8.setObjectName(u"label_8")
-        sizePolicy2.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
-        self.label_8.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_8.sizePolicy().hasHeightForWidth())
+        self.label_8.setSizePolicy(sizePolicy3)
         self.label_8.setMinimumSize(QSize(30, 0))
         self.label_8.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -166,8 +180,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_9 = QLabel(self.centralwidget)
         self.label_9.setObjectName(u"label_9")
-        sizePolicy2.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
-        self.label_9.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy3)
         self.label_9.setMinimumSize(QSize(30, 0))
         self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -175,8 +189,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_10 = QLabel(self.centralwidget)
         self.label_10.setObjectName(u"label_10")
-        sizePolicy2.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
-        self.label_10.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
+        self.label_10.setSizePolicy(sizePolicy3)
         self.label_10.setMinimumSize(QSize(30, 0))
         self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -184,8 +198,8 @@ class Ui_PokemonSearcher(object):
 
         self.label_11 = QLabel(self.centralwidget)
         self.label_11.setObjectName(u"label_11")
-        sizePolicy2.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
-        self.label_11.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_11.sizePolicy().hasHeightForWidth())
+        self.label_11.setSizePolicy(sizePolicy3)
         self.label_11.setMinimumSize(QSize(30, 0))
         self.label_11.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -209,12 +223,12 @@ class Ui_PokemonSearcher(object):
     def retranslateUi(self, PokemonSearcher):
         PokemonSearcher.setWindowTitle(QCoreApplication.translate("PokemonSearcher", u"MainWindow", None))
         self.searchBar.setPlaceholderText(QCoreApplication.translate("PokemonSearcher", u"Search Pokemon, Move, Type, Ability, etc...", None))
-        self.clearSearchButton.setText(QCoreApplication.translate("PokemonSearcher", u"Clear Search", None))
+        self.clearSearchButton.setText(QCoreApplication.translate("PokemonSearcher", u"Clear Filters", None))
+        self.label_5.setText(QCoreApplication.translate("PokemonSearcher", u"Leave all blank to search for all:", None))
         self.pokemonCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Pokemon", None))
         self.typesCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Types", None))
         self.abilitiesCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Abilities", None))
         self.movesCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Moves", None))
-        self.label_5.setText(QCoreApplication.translate("PokemonSearcher", u"Leave all blank to search for all", None))
         self.label_2.setText(QCoreApplication.translate("PokemonSearcher", u"Name", None))
         self.label.setText(QCoreApplication.translate("PokemonSearcher", u"Types", None))
         self.label_3.setText(QCoreApplication.translate("PokemonSearcher", u"Abilities", None))
