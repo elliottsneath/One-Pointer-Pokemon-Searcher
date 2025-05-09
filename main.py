@@ -2,11 +2,13 @@ import sys
 import json
 import os
 from utils.pokemon_list_item import PokemonListItem
+from data.pokemon_obj import PokemonData
 from assets.ui.main_ui import Ui_PokemonSearcher
+from assets.ui.clickable_label import ClickableLabel
 from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QCompleter, QWidget, \
-                              QHBoxLayout, QPushButton, QLabel, QSizePolicy
+                              QHBoxLayout, QProgressDialog, QLabel, QSizePolicy
 from PySide6.QtGui import Qt
-from PySide6.QtCore import QStringListModel, QTimer
+from PySide6.QtCore import QStringListModel, QTimer, QEventLoop
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,7 +16,7 @@ FILTERED_POKEDEX_PATH = os.path.join(BASE_DIR, "data/filtered_pokedex.json")
 FILTERED_LEARNSET_PATH = os.path.join(BASE_DIR, "data/filtered_learnset.json")
 
 """TODO:
-    Sort by selected stat
+    Sort by selected stat needs to have a loading wheel
     Implement list widget item click, connect to window / tab with pokemon info
 """
 
@@ -25,78 +27,35 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
 
         self.setWindowTitle("One Pointer Pokemon Searcher")
 
-        self.initialise_assets()
+        self.initialise_vars()
         self.initialise_completer()
         self.initialise_connections()
 
         self.populate_pokemon_list()
 
-    def initialise_assets(self):
+    def initialise_vars(self):
+        self.pokemon = {}
         self.applied_filters = []
+
+        self.trait_sorted = False
+        self.selected_trait = None
 
         pokemon_moves = set()
         pokemon_names = []
-        pokemon_types = ["Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground",
-                         "Rock", "Psychic", "Ice", "Bug", "Ghost", "Steel", "Dragon", "Dark", "Fairy"]
+        pokemon_types = ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying",
+                         "Ghost", "Grass", "Ground", "Ice", "Normal", "Psychic", "Poison", "Rock",
+                         "Steel", "Water"]
         pokemon_abilities = set()
 
         try:
-            with open(FILTERED_LEARNSET_PATH, 'r') as f:
-                learnset_data = json.load(f)
-
-            for moves in learnset_data.values():
-                pokemon_moves.update(moves)
-
-            self.pokemon_moves = sorted(pokemon_moves)
-
-        except FileNotFoundError:
-            print(f"Error: {FILTERED_LEARNSET_PATH} not found.")
-        except json.JSONDecodeError:
-            print(f"Error parsing JSON in {FILTERED_LEARNSET_PATH}.")
-
-
-        try:
-            with open(FILTERED_POKEDEX_PATH, 'r') as f:
-                pokedex = json.load(f)
-
-            for pokemon, data in pokedex.items():
-                name = pokemon.capitalize()
-                pokemon_names.append(name)
-
-                abilities = data.get("abilities", {}).items()
-                for key, value in abilities:
-                        pokemon_abilities.add(value)
-            
-            self.pokemon_names = sorted(pokemon_names)
-            self.pokemon_types = sorted(pokemon_types)
-            self.pokemon_abilities = sorted(pokemon_abilities)
-
-        except FileNotFoundError:
-            print(f"Error: {FILTERED_POKEDEX_PATH} not found.")
-        except json.JSONDecodeError:
-            print(f"Error parsing JSON in {FILTERED_POKEDEX_PATH}.")
-
-    def initialise_completer(self):
-        self.completer = QCompleter(self)
-        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
-        self.completer.setFilterMode(Qt.MatchContains)
-        self.completer.activated.connect(self.add_to_filter_list)
-        self.searchBar.setCompleter(self.completer)
-    
-    def initialise_connections(self):
-        self.clearSearchButton.clicked.connect(self.clear_search)
-        self.searchBar.textChanged.connect(self.filter_pokemon)
-
-    def populate_pokemon_list(self):
-        try:
             with open(FILTERED_POKEDEX_PATH, 'r') as f:
                 pokedex = json.load(f)
             with open(FILTERED_LEARNSET_PATH, 'r') as f:
                 learnset_data = json.load(f)
 
             for pokemon, data in pokedex.items():
-                name = pokemon.capitalize()
-
+                num = data.get("num", -1)
+                name = data.get("name", "")
                 types = data.get("types", [])
 
                 abilities = data.get("abilities", {}).items()
@@ -111,18 +70,80 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                 stats = list(data.get("baseStats", {}).values())
                 moves = learnset_data.get(pokemon, [])
 
-                custom_widget = PokemonListItem(name, types, base_abilities, hidden_abilities, stats, moves)
+                pokemon_obj = PokemonData(
+                    name=name,
+                    types=types,
+                    base_abilities=base_abilities,
+                    hidden_abilities=hidden_abilities,
+                    stats=stats,
+                    moves=moves
+                )
+                self.pokemon[num] = pokemon_obj
 
-                list_item = QListWidgetItem(self.pokemonListWidget)
-                list_item.setSizeHint(custom_widget.sizeHint())
+            for moves in learnset_data.values():
+                pokemon_moves.update(moves)
 
-                self.pokemonListWidget.addItem(list_item)
-                self.pokemonListWidget.setItemWidget(list_item, custom_widget)
+            for pokemon, data in pokedex.items():
+                name = pokemon.capitalize()
+                pokemon_names.append(name)
 
+                abilities = data.get("abilities", {}).items()
+                for key, value in abilities:
+                        pokemon_abilities.add(value)
+            
+            self.pokemon_moves = sorted(pokemon_moves)
+            self.pokemon_names = sorted(pokemon_names)
+            self.pokemon_types = sorted(pokemon_types)
+            self.pokemon_abilities = sorted(pokemon_abilities)
+                
         except FileNotFoundError as e:
             print(f"Error: {e}")
         except json.JSONDecodeError as e:
             print(f"Error parsing JSON: {e}")
+
+    def initialise_completer(self):
+        self.completer = QCompleter(self)
+        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.completer.setFilterMode(Qt.MatchContains)
+        self.completer.activated.connect(self.add_to_filter_list)
+        self.searchBar.setCompleter(self.completer)
+    
+    def initialise_connections(self):
+        self.clearSearchButton.clicked.connect(self.clear_search)
+        self.searchBar.textChanged.connect(self.filter_pokemon)
+        self.nameLabel.clicked.connect(lambda: self.sort_by_label("name"))
+        self.hpLabel.clicked.connect(lambda: self.sort_by_label("hp"))
+        self.atkLabel.clicked.connect(lambda: self.sort_by_label("atk"))
+        self.defLabel.clicked.connect(lambda: self.sort_by_label("def"))
+        self.spaLabel.clicked.connect(lambda: self.sort_by_label("spa"))
+        self.spdLabel.clicked.connect(lambda: self.sort_by_label("spd"))
+        self.speLabel.clicked.connect(lambda: self.sort_by_label("spe"))
+        self.bstLabel.clicked.connect(lambda: self.sort_by_label("bst"))
+
+    def populate_pokemon_list(self, order=None, reverse=False):
+        self.pokemonListWidget.clear()
+
+        def sort_key(item):
+            _, pokemon = item
+            if order is None: # default number order
+                return 0
+            elif order < 6: # one of the 6 stats
+                return pokemon.stats[order]
+            elif order == 6: # bst
+                return sum(pokemon.stats)
+            elif order == 7: # name
+                return pokemon.name
+            return 0
+
+        sorted_items = sorted(self.pokemon.items(), key=sort_key, reverse=reverse if order != 7 else not reverse)
+        # makes it sort from highest to lowest, apart from name, then goes alphabetical
+
+        for pokemon_num, pokemon in sorted_items:
+            custom_widget = PokemonListItem(pokemon)
+            list_item = QListWidgetItem(self.pokemonListWidget)
+            list_item.setSizeHint(custom_widget.sizeHint())
+            self.pokemonListWidget.addItem(list_item)
+            self.pokemonListWidget.setItemWidget(list_item, custom_widget)
 
     def clear_search(self):
         self.searchBar.clear()
@@ -173,6 +194,59 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         refined_list = [item for item in filter_list if text.lower() in item.lower()]
 
         self.completer.setModel(QStringListModel(refined_list))
+
+    def sort_by_label(self, trait: str):
+        label: ClickableLabel = getattr(self, f"{trait}Label")
+
+        if not hasattr(self, "sorting_states"):
+            self.sorting_states = {}
+
+        current_state = self.sorting_states.get(trait, 0)
+
+        # Show a loading dialog
+        loading_dialog = QProgressDialog("Sorting Pokémon...", None, 0, 0, self)
+        loading_dialog.setWindowModality(Qt.ApplicationModal)
+        loading_dialog.setCancelButton(None)
+        loading_dialog.setMinimumDuration(0)
+        loading_dialog.setRange(0, 0)  # Indeterminate progress
+        loading_dialog.show()
+
+        # Process events to keep the UI responsive
+        loop = QEventLoop()
+        QTimer.singleShot(100, loop.quit)  # Allow the dialog to render
+        loop.exec()
+
+        # Perform sorting based on the current state
+        if current_state == 0:
+            # First click: Sort in ascending order
+            label.highlight(True)
+            self.sorting_states[trait] = 1
+            self.sort_pokemon_list(trait, reverse=False)
+        elif current_state == 1:
+            # Second click: Sort in descending order
+            label.highlight(True)
+            self.sorting_states[trait] = 2
+            self.sort_pokemon_list(trait, reverse=True)
+        else:
+            # Third click: Reset to default order
+            label.highlight(False)
+            self.sorting_states[trait] = 0
+            self.populate_pokemon_list()  # Reset to the original order
+
+        # Reset other labels' states
+        for other_trait, state in self.sorting_states.items():
+            if other_trait != trait and state != 0:
+                other_label: ClickableLabel = getattr(self, f"{other_trait}Label")
+                other_label.highlight(False)
+                self.sorting_states[other_trait] = 0
+
+        # Close the loading dialog after sorting is complete
+        loading_dialog.close()
+
+    def sort_pokemon_list(self, trait: str, reverse):
+        self.pokemonListWidget.clear()
+        stats = ["hp","atk","def","spa","spd","spe","bst","name"]
+        self.populate_pokemon_list(stats.index(trait), reverse)
 
     def add_to_filter_list(self, selected_item):
         self.applied_filters.append(selected_item)
@@ -233,15 +307,16 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
             list_item = self.pokemonListWidget.item(i)
             custom_widget = self.pokemonListWidget.itemWidget(list_item)
 
-            name = custom_widget.name
-            types = custom_widget.types
-            base_abilities = custom_widget.base_abilities
-            hidden_abilities = custom_widget.hidden_abilities
-            moves = custom_widget.moves
+            pokemon_data = custom_widget.pokemon_data
+
+            name = pokemon_data.name
+            types = pokemon_data.types
+            base_abilities = pokemon_data.base_abilities
+            hidden_abilities = pokemon_data.hidden_abilities
+            moves = pokemon_data.moves
 
             matches_filter = True
             for filter_item in self.applied_filters:
-                print(filter_item)
                 keyword, category = filter_item.split(" - ")
                 keyword = keyword.strip().lower()
                 category = category.strip().lower()
@@ -255,7 +330,6 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                 elif category == "move" and keyword not in [m.lower() for m in moves]:
                     matches_filter = False
 
-            # Hide or show the item based on the filter match
             list_item.setHidden(not matches_filter)
 
 def handle_exception(exc_type, exc_value, exc_traceback):

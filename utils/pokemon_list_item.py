@@ -1,31 +1,28 @@
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
 from PySide6.QtGui import QFont, QPixmap, Qt
 import os
+from data.pokemon_obj import PokemonData
 
 class PokemonListItem(QWidget):
-    def __init__(self, name: str, types: list, base_abilities: list, hidden_abilities: list, stats:list, moves, parent=None):
+    def __init__(self, pokemon_data: PokemonData, parent=None):
         super(PokemonListItem, self).__init__(parent)
 
-        self.name = name
-        self.types = types
-        self.base_abilities = base_abilities
-        self.hidden_abilities = hidden_abilities
-        self.stats = stats
-        self.moves = moves
+        self.pokemon_data = pokemon_data
 
         layout = QHBoxLayout(self)
         layout.setContentsMargins(10, 0, 10, 0)
         layout.setSpacing(6)
 
-        name_label = QLabel(name)
+        # Name Label
+        name_label = QLabel(pokemon_data.name)
         name_label.setFont(QFont("Arial", 12, QFont.Bold))
         name_label.setFixedWidth(120)
         name_label.setAlignment(Qt.AlignCenter)
         layout.addWidget(name_label)
 
-
+        # Types
         types_layout = QHBoxLayout()
-        for pokemon_type in types:
+        for pokemon_type in pokemon_data.types:
             type_icon = QLabel()
             svg_path = os.path.join("assets", "icons", f"{pokemon_type.lower()}.svg")
             pixmap = QPixmap(svg_path)
@@ -38,21 +35,21 @@ class PokemonListItem(QWidget):
         types_layout.setAlignment(Qt.AlignCenter)
         types_widget = QWidget()
         types_widget.setLayout(types_layout)
-        types_widget.setFixedWidth(100) 
+        types_widget.setFixedWidth(100)
         layout.addWidget(types_widget)
 
-
+        # Abilities
         abilities_layout = QHBoxLayout()
 
         base_abilities_layout = QVBoxLayout()
-        for ability in base_abilities:
+        for ability in pokemon_data.base_abilities:
             ability_label = QLabel(ability)
             ability_label.setFixedWidth(100)
             base_abilities_layout.addWidget(ability_label)
         abilities_layout.addLayout(base_abilities_layout)
 
         hidden_abilities_layout = QVBoxLayout()
-        for ability in hidden_abilities:
+        for ability in pokemon_data.hidden_abilities:
             ability_label = QLabel(ability)
             ability_label.setFixedWidth(100)
             hidden_abilities_layout.addWidget(ability_label)
@@ -61,36 +58,13 @@ class PokemonListItem(QWidget):
         abilities_layout.setAlignment(Qt.AlignCenter)
         abilities_widget = QWidget()
         abilities_widget.setLayout(abilities_layout)
-        abilities_widget.setFixedWidth(200) 
+        abilities_widget.setFixedWidth(200)
         layout.addWidget(abilities_widget)
 
-
-        hp_label = QLabel(str(stats[0]))
-        hp_label.setFixedWidth(30)
-        layout.addWidget(hp_label)
-
-        atk_label = QLabel(str(stats[1]))
-        atk_label.setFixedWidth(30)
-        layout.addWidget(atk_label)
-
-        def_label = QLabel(str(stats[2]))
-        def_label.setFixedWidth(30)
-        layout.addWidget(def_label)
-
-        spa_label = QLabel(str(stats[3]))
-        spa_label.setFixedWidth(30)
-        layout.addWidget(spa_label)
-
-        spd_label = QLabel(str(stats[4]))
-        spd_label.setFixedWidth(30)
-        layout.addWidget(spd_label)
-
-        spe_label = QLabel(str(stats[5]))
-        spe_label.setFixedWidth(30)
-        layout.addWidget(spe_label)
-
-        bst_label = QLabel(str(sum(stats)))
-        bst_label.setFixedWidth(30)
-        layout.addWidget(bst_label)
+        # Stats
+        for stat in pokemon_data.stats + [sum(pokemon_data.stats)]:  # Include BST
+            stat_label = QLabel(str(stat))
+            stat_label.setFixedWidth(30)
+            layout.addWidget(stat_label)
 
         self.setLayout(layout)
