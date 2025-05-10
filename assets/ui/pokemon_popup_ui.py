@@ -20,15 +20,18 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QGridLayout,
     QListWidgetItem, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
 
+from assets.ui.clickable_label import ClickableLabel
 from assets.ui.stats_bar_widget import StatBar
 
 class Ui_PokemonPopup(object):
     def setupUi(self, PokemonPopup):
         if not PokemonPopup.objectName():
             PokemonPopup.setObjectName(u"PokemonPopup")
-        PokemonPopup.resize(400, 332)
+        PokemonPopup.resize(400, 338)
         self.verticalLayout = QVBoxLayout(PokemonPopup)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.nameLabel = QLabel(PokemonPopup)
         self.nameLabel.setObjectName(u"nameLabel")
         font = QFont()
@@ -36,7 +39,19 @@ class Ui_PokemonPopup(object):
         font.setBold(True)
         self.nameLabel.setFont(font)
 
-        self.verticalLayout.addWidget(self.nameLabel)
+        self.horizontalLayout_2.addWidget(self.nameLabel)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+        self.starLabel = ClickableLabel(PokemonPopup)
+        self.starLabel.setObjectName(u"starLabel")
+
+        self.horizontalLayout_2.addWidget(self.starLabel)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -197,6 +212,7 @@ class Ui_PokemonPopup(object):
     def retranslateUi(self, PokemonPopup):
         PokemonPopup.setWindowTitle(QCoreApplication.translate("PokemonPopup", u"Dialog", None))
         self.nameLabel.setText(QCoreApplication.translate("PokemonPopup", u"TextLabel", None))
+        self.starLabel.setText(QCoreApplication.translate("PokemonPopup", u"star", None))
         self.type1Label.setText(QCoreApplication.translate("PokemonPopup", u"TextLabel", None))
         self.type2Label.setText(QCoreApplication.translate("PokemonPopup", u"TextLabel", None))
         self.label_5.setText(QCoreApplication.translate("PokemonPopup", u"Special Attack", None))

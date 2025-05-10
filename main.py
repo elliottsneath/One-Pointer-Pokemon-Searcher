@@ -1,26 +1,29 @@
 import sys
 import json
 import os
-from utils.pokemon_list_item import PokemonListItem
+from assets.ui.pokemon_list_item import PokemonListItem
 from data.pokemon_obj import PokemonData
 from assets.ui.main_ui import Ui_PokemonSearcher
 from assets.ui.pokemon_popup_ui import Ui_PokemonPopup
 from assets.ui.clickable_label import ClickableLabel
 from PySide6.QtWidgets import QMainWindow, QApplication, QListWidgetItem, QCompleter, QWidget, \
-                              QHBoxLayout, QDialog, QLabel, QSizePolicy
-from PySide6.QtGui import Qt, QPixmap, QColor
-from PySide6.QtCore import QStringListModel, QTimer
+                              QHBoxLayout, QDialog, QLabel, QSizePolicy, QSplashScreen
+from PySide6.QtGui import Qt, QPixmap, QColor, QIcon
+from PySide6.QtCore import QStringListModel, QTimer, Signal
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 FILTERED_POKEDEX_PATH = os.path.join(BASE_DIR, "data/filtered_pokedex.json")
 FILTERED_LEARNSET_PATH = os.path.join(BASE_DIR, "data/filtered_learnset.json")
+CONFIG_FILE_PATH = os.path.join(BASE_DIR, "data/config.json")
 
-"""TODO:
-    Add back forms to pokemon data (hisui, alola, etc)
+"""
+TODO:
+    Add favourites with config file
 """
 
 class MainWindow(QMainWindow, Ui_PokemonSearcher):
+    loaded = Signal()
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
@@ -32,6 +35,8 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         self.initialise_connections()
 
         self.update_filtered_pokemon()
+
+        self.loaded.emit()
 
     def initialise_vars(self):
         self.master_list = []
@@ -55,6 +60,8 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                 pokedex = json.load(f)
             with open(FILTERED_LEARNSET_PATH, 'r') as f:
                 learnset_data = json.load(f)
+            with open(CONFIG_FILE_PATH, 'r') as f:
+                favourites = json.load(f)
 
             self.highest_stats = [-float('inf')] * 6
             self.lowest_stats = [float('inf')] * 6
@@ -77,6 +84,8 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                 stats = list(data.get("baseStats", {}).values())
                 moves = learnset_data.get(pokemon, [])
 
+                favourite = True if name in favourites.get("favourites") else False
+
                 # update highest and lowest stats
                 for i, stat in enumerate(stats):
                     if stat > self.highest_stats[i]:
@@ -92,7 +101,8 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                     base_abilities=base_abilities,
                     hidden_abilities=hidden_abilities,
                     stats=stats,
-                    moves=moves
+                    moves=moves,
+                    favourite=favourite
                 )
 
                 # populate lists of pokemon
@@ -100,7 +110,7 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
                 self.filtered_sorted_list.append(pokemon_obj)
 
                 # get lists of all possible moves, names, abilities
-                self.all_names.append(pokemon.capitalize())
+                self.all_names.append(name)
                 abilities = data.get("abilities", {}).items()
                 for _, value in abilities:
                     self.all_abilities.add(value)
@@ -265,6 +275,7 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
             reverse = self.trait_reverse        
 
         self.filtered_sorted_list = sorted(self.filtered_sorted_list, key=sort_key, reverse=reverse)
+        self.filtered_sorted_list = [p for p in self.filtered_sorted_list if p.favourite] + [p for p in self.filtered_sorted_list if not p.favourite]
         
         self.update_pokemon_list_ui()
 
@@ -317,8 +328,13 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
         self.ui.setupUi(self.popup)
 
         self.ui.lineEdit.textChanged.connect(lambda text: self.update_moves_in_popup(text, selected_pokemon))
+        self.ui.starLabel.clicked.connect(lambda: self.update_favourites(selected_pokemon))
 
         self.ui.nameLabel.setText(selected_pokemon.name)
+        
+        star_png = "star_filled.png" if selected_pokemon.favourite else "star.png"
+        png_path = os.path.join("assets", "icons", star_png)
+        self.ui.starLabel.setPixmap(QPixmap(png_path).scaled(36, 36))
         
         if len(selected_pokemon.types) < 2:
             type = selected_pokemon.types[0]
@@ -381,12 +397,31 @@ class MainWindow(QMainWindow, Ui_PokemonSearcher):
             self.ui.moveListWidget.addItem(move)
 
         self.popup.exec()
+        self.update_filtered_pokemon()
+
+    def update_favourites(self, pokemon):
+        pokemon.favourite = not pokemon.favourite
+        self.ui.starLabel.change_star(pokemon.favourite)
 
     def update_moves_in_popup(self, text: str, selected_pokemon):
         self.ui.moveListWidget.clear()
         for move in selected_pokemon.moves:
             if text in move:
                 self.ui.moveListWidget.addItem(move)
+
+    def closeEvent(self, event):
+        try:
+            favourite_names = [pokemon.name for pokemon in self.master_list if pokemon.favourite]
+
+            with open(CONFIG_FILE_PATH, 'w') as f:
+                json.dump({"favourites": favourite_names}, f, indent=4)
+
+            print("Favourites saved successfully.")
+        except Exception as e:
+            print(f"Error saving favourites: {e}")
+
+        event.accept()
+        
 
 def handle_exception(exc_type, exc_value, exc_traceback):
     import traceback
@@ -400,15 +435,20 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 
 def main():
     app = QApplication(sys.argv)
-    #app.setWindowIcon(QIcon('assets/images/...'))
-    #icon = QPixmap('assets/images/...')
-    #resized_icon = icon.scaled(icon.size() * 0.5, Qt.KeepAspectRatio)
-    #spl = QSplashScreen(resized_icon)
-    #spl.show()
-    #spl.activateWindow()
+    app.setWindowIcon(QIcon('assets/icons/JCB_Logo'))
+
+    icon = QPixmap('assets/icons/JCB_Logo')
+    resized_icon = icon.scaled(icon.size() * 0.5, Qt.KeepAspectRatio)
+
+    spl = QSplashScreen(resized_icon)
+    spl.show()
+    spl.activateWindow()
+
     window = MainWindow()
-    #window.loaded.connect(lambda: spl.finish(window))
+    window.loaded.connect(lambda: spl.finish(window))
     window.show()
+    spl.finish(window)
+
     sys.exit(app.exec())
 
 if __name__ == '__main__':

@@ -10,3 +10,4 @@ class PokemonData:
     hidden_abilities: List[str]
     stats: List[int]
     moves: List[str]
+    favourite: bool = False
