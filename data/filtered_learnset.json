@@ -1066,6 +1066,71 @@
         "workup",
         "zenheadbutt"
     ],
+    "rattataalola": [
+        "assurance",
+		"attract",
+		"bite",
+		"blizzard",
+		"confide",
+		"counter",
+		"covet",
+		"crunch",
+		"darkpulse",
+		"dig",
+		"doubleedge",
+		"doubleteam",
+		"embargo",
+		"endeavor",
+		"facade",
+		"finalgambit",
+		"focusenergy",
+		"frustration",
+		"furyswipes",
+		"grassknot",
+		"headbutt",
+		"hiddenpower",
+		"hyperfang",
+		"icebeam",
+		"icywind",
+		"irontail",
+		"lastresort",
+		"mefirst",
+		"protect",
+		"pursuit",
+		"quash",
+		"quickattack",
+		"raindance",
+		"rest",
+		"return",
+		"revenge",
+		"reversal",
+		"round",
+		"shadowball",
+		"shadowclaw",
+		"shockwave",
+		"sleeptalk",
+		"sludgebomb",
+		"snarl",
+		"snatch",
+		"snore",
+		"stockpile",
+		"substitute",
+		"suckerpunch",
+		"sunnyday",
+		"superfang",
+		"swagger",
+		"swallow",
+		"switcheroo",
+		"tackle",
+		"tailwhip",
+		"taunt",
+		"thief",
+		"torment",
+		"toxic",
+		"uproar",
+		"uturn",
+		"zenheadbutt"
+    ],
     "raticate": [
         "assurance",
         "attract",
@@ -1151,6 +1216,7 @@
         "workup",
         "zenheadbutt"
     ],
+    "raticatealola": ["assurance", "attract", "bite", "blizzard", "bulkup", "confide", "counter", "covet", "crunch", "darkpulse", "dig", "doubleedge", "doubleteam", "embargo", "endeavor", "facade", "focusenergy", "frustration", "furyswipes", "gigaimpact", "grassknot", "headbutt", "hiddenpower", "hyperbeam", "hyperfang", "icebeam", "icywind", "irontail", "knockoff", "lastresort", "protect", "pursuit", "quash", "quickattack", "raindance", "rest", "return", "roar", "round", "scaryface", "shadowball", "shadowclaw", "shockwave", "sleeptalk", "sludgebomb", "sludgewave", "snarl", "snatch", "snore", "stompingtantrum", "substitute", "suckerpunch", "sunnyday", "superfang", "swagger", "swordsdance", "tackle", "tailwhip", "taunt", "thief", "throatchop", "torment", "toxic", "uproar", "uturn", "venoshock", "zenheadbutt"],
     "spearow": [
         "aerialace",
         "agility",
@@ -1804,6 +1870,7 @@
         "workup",
         "xscissor"
     ],
+    "sandshrewalola": ["aerialace", "amnesia", "aquatail", "attract", "auroraveil", "avalanche", "bide", "blizzard", "bodyslam", "brickbreak", "bulldoze", "chipaway", "confide", "counter", "covet", "crushclaw", "curse", "defensecurl", "dig", "doubleedge", "doubleteam", "earthquake", "endeavor", "endure", "facade", "flail", "flashcannon", "fling", "focuspunch", "frostbreath", "frustration", "furycutter", "furyswipes", "gyroball", "hail", "headbutt", "hiddenpower", "honeclaws", "iceball", "icebeam", "icepunch", "iceshard", "icespinner", "iciclecrash", "iciclespear", "icywind", "irondefense", "ironhead", "irontail", "knockoff", "leechlife", "lowkick", "metalclaw", "mirrorcoat", "mist", "nightslash", "poisonjab", "powdersnow", "protect", "rapidspin", "rest", "return", "rockslide", "rocktomb", "rollout", "round", "safeguard", "scratch", "seismictoss", "shadowclaw", "slash", "sleeptalk", "snore", "snowscape", "stealthrock", "steelbeam", "steelroller", "substitute", "sunnyday", "superfang", "swagger", "swift", "swordsdance", "takedown", "terablast", "thief", "throatchop", "toxic", "tripleaxel", "workup", "xscissor"],
     "nidorina": [
         "aerialace",
         "attract",
@@ -2313,6 +2380,7 @@
         "willowisp",
         "zenheadbutt"
     ],
+    "vulpixalola": ["agility", "aquatail", "attract", "aurorabeam", "auroraveil", "babydolleyes", "batonpass", "blizzard", "bodyslam", "captivate", "celebrate", "charm", "chillingwater", "confide", "confuseray", "covet", "darkpulse", "dazzlinggleam", "dig", "disable", "disarmingvoice", "doubleedge", "doubleteam", "drainingkiss", "encore", "endure", "extrasensory", "facade", "faketears", "feintattack", "flail", "foulplay", "freezedry", "frostbreath", "frustration", "grudge", "hail", "headbutt", "healbell", "helpinghand", "hex", "hiddenpower", "howl", "hypnosis", "icebeam", "iceshard", "iciclespear", "icywind", "imprison", "irontail", "mist", "mistyterrain", "moonblast", "nastyplot", "painsplit", "payback", "playrough", "powdersnow", "powerswap", "protect", "psychup", "raindance", "reflect", "rest", "return", "roar", "roleplay", "round", "safeguard", "secretpower", "sheercold", "sleeptalk", "snore", "snowscape", "spite", "storedpower", "substitute", "swagger", "swift", "tackle", "tailslap", "tailwhip", "takedown", "terablast", "toxic", "weatherball", "zenheadbutt"],
     "igglybuff": [
         "alluringvoice",
         "attract",
@@ -3208,6 +3276,8 @@
         "uproar",
         "workup"
     ],
+    "diglettalola": ["aerialace", "agility", "allyswitch", "ancientpower", "assurance", "astonish", "attract", "beatup", "bodyslam", "bulldoze", "charm", "confide", "dig", "doubleteam", "earthpower", "earthquake", "echoedvoice", "endure", "facade", "feintattack", "finalgambit", "fissure", "flashcannon", "foulplay", "frustration", "furyswipes", "growl", "headbutt", "helpinghand", "hiddenpower", "honeclaws", "irondefense", "ironhead", "magnitude", "memento", "metalclaw", "metalsound", "mudbomb", "mudshot", "mudslap", "protect", "pursuit", "rest", "return", "reversal", "rockblast", "rockslide", "rocktomb", "round", "sandattack", "sandstorm", "sandtomb", "scaryface", "scorchingsands", "scratch", "screech", "shadowclaw", "slash", "sleeptalk", "sludgebomb", "smackdown", "snore", "stealthrock", "steelbeam", "stompingtantrum", "stoneedge", "substitute", "suckerpunch", "sunnyday", "swagger", "swordsdance", "takedown", "terablast", "thief", "thrash", "toxic", "uproar", "workup"],
+    "dugtrioalola": ["aerialace", "agility", "allyswitch", "assurance", "astonish", "attract", "beatup", "bodyslam", "bulldoze", "charm", "confide", "curse", "dig", "doubleedge", "doubleteam", "earthpower", "earthquake", "echoedvoice", "endeavor", "endure", "facade", "fissure", "flashcannon", "foulplay", "frustration", "furyswipes", "gigaimpact", "growl", "headbutt", "helpinghand", "hiddenpower", "highhorsepower", "hyperbeam", "irondefense", "ironhead", "magnitude", "metalclaw", "metalsound", "mudbomb", "mudshot", "mudslap", "nightslash", "protect", "rest", "return", "reversal", "rockblast", "rockslide", "rocktomb", "rototiller", "round", "sandattack", "sandstorm", "sandtomb", "scaryface", "scorchingsands", "scratch", "screech", "shadowclaw", "slash", "sleeptalk", "sludgebomb", "sludgewave", "smackdown", "snore", "stealthrock", "steelbeam", "stompingtantrum", "stoneedge", "substitute", "suckerpunch", "sunnyday", "swagger", "swordsdance", "takedown", "terablast", "thief", "throatchop", "toxic", "triattack", "uproar", "workup"],
     "meowth": [
         "aerialace",
         "agility",
@@ -3322,6 +3392,8 @@
         "workup",
         "zapcannon"
     ],
+    "meowthalola": ["aerialace", "agility", "amnesia", "assist", "assurance", "attract", "bite", "bodyslam", "captivate", "charm", "chillingwater", "confide", "confuseray", "covet", "curse", "darkpulse", "dig", "doubleedge", "doubleteam", "dreameater", "echoedvoice", "embargo", "endeavor", "endure", "facade", "fakeout", "faketears", "feint", "feintattack", "flail", "flatter", "foulplay", "frustration", "furyswipes", "growl", "gunkshot", "headbutt", "helpinghand", "hiddenpower", "hypervoice", "hypnosis", "icywind", "irontail", "knockoff", "lashout", "lastresort", "metalclaw", "nastyplot", "nightslash", "partingshot", "payback", "payday", "playrough", "powergem", "protect", "psychup", "punishment", "quash", "raindance", "rest", "retaliate", "return", "round", "scratch", "screech", "seedbomb", "shadowball", "shadowclaw", "shockwave", "slash", "sleeptalk", "snarl", "snatch", "snore", "spite", "substitute", "sunnyday", "swagger", "swift", "takedown", "taunt", "terablast", "thief", "throatchop", "thunder", "thunderbolt", "thunderwave", "torment", "toxic", "trailblaze", "uproar", "uturn", "waterpulse", "workup"],
+    "meowthgalar": ["aerialace", "amnesia", "assurance", "attract", "bodyslam", "brickbreak", "charm", "covet", "crunch", "curse", "darkpulse", "dig", "doubleedge", "endeavor", "endure", "facade", "fakeout", "faketears", "falseswipe", "flail", "flashcannon", "fling", "foulplay", "furyswipes", "growl", "gunkshot", "gyroball", "helpinghand", "honeclaws", "hypervoice", "irondefense", "ironhead", "irontail", "knockoff", "lashout", "metalclaw", "metalsound", "metronome", "nastyplot", "nightslash", "payback", "payday", "playrough", "protect", "raindance", "rest", "retaliate", "round", "scratch", "screech", "seedbomb", "shadowball", "shadowclaw", "slash", "sleeptalk", "snore", "spite", "stealthrock", "steelbeam", "substitute", "sunnyday", "swagger", "swordsdance", "takedown", "taunt", "terablast", "thief", "thrash", "throatchop", "thunder", "thunderbolt", "trailblaze", "uproar", "uturn", "workup", "xscissor"],
     "persian": [
         "aerialace",
         "agility",
@@ -3965,6 +4037,7 @@
         "wildcharge",
         "willowisp"
     ],
+    "growlithehisui": ["agility", "bite", "bodyslam", "closecombat", "covet", "crunch", "dig", "doubleedge", "doublekick", "ember", "endure", "facade", "fireblast", "firefang", "firespin", "flamecharge", "flamethrower", "flamewheel", "flareblitz", "headsmash", "heatwave", "helpinghand", "howl", "leer", "morningsun", "outrage", "overheat", "powergem", "protect", "psychicfangs", "rest", "retaliate", "reversal", "roar", "rockblast", "rockslide", "rocktomb", "sandstorm", "scaryface", "scorchingsands", "sleeptalk", "smackdown", "smartstrike", "stealthrock", "stoneedge", "substitute", "sunnyday", "takedown", "temperflare", "terablast", "thrash", "thunderfang", "wildcharge", "willowisp"],
     "poliwag": [
         "amnesia",
         "attract",
@@ -5078,6 +5151,7 @@
         "toxic",
         "wideguard"
     ],
+    "geodudealola": ["attract", "autotomize", "bide", "block", "bodyslam", "brickbreak", "brutalswing", "bulldoze", "charge", "chargebeam", "confide", "counter", "curse", "defensecurl", "dig", "discharge", "doubleedge", "doubleteam", "earthpower", "earthquake", "electroweb", "endure", "explosion", "facade", "fireblast", "firepunch", "flail", "flamethrower", "fling", "focuspunch", "frustration", "gyroball", "headbutt", "hiddenpower", "highhorsepower", "irondefense", "magnetrise", "mudshot", "mudslap", "naturepower", "protect", "rest", "return", "rockblast", "rockclimb", "rockpolish", "rockslide", "rockthrow", "rocktomb", "rollout", "round", "sandstorm", "screech", "seismictoss", "selfdestruct", "sleeptalk", "smackdown", "snore", "spark", "stealthrock", "stoneedge", "substitute", "sunnyday", "supercellslam", "superpower", "swagger", "tackle", "takedown", "terablast", "thunder", "thunderbolt", "thunderpunch", "thundershock", "thunderwave", "toxic", "voltswitch", "wideguard", "wildcharge", "zapcannon"],
     "graveler": [
         "ancientpower",
         "attract",
@@ -5167,6 +5241,7 @@
         "thunderpunch",
         "toxic"
     ],
+    "graveleralola": ["allyswitch", "attract", "bide", "block", "bodyslam", "brickbreak", "brutalswing", "bulldoze", "charge", "chargebeam", "confide", "curse", "defensecurl", "dig", "discharge", "doubleedge", "doubleteam", "earthpower", "earthquake", "electricterrain", "electroweb", "endure", "explosion", "facade", "fireblast", "firepunch", "flamethrower", "fling", "focusblast", "focuspunch", "frustration", "gyroball", "hardpress", "headbutt", "hiddenpower", "highhorsepower", "irondefense", "magnetrise", "metronome", "mudshot", "mudslap", "naturepower", "protect", "rest", "return", "rockblast", "rockpolish", "rockslide", "rockthrow", "rocktomb", "rollout", "round", "sandstorm", "scaryface", "seismictoss", "selfdestruct", "shockwave", "sleeptalk", "smackdown", "snore", "spark", "stealthrock", "stompingtantrum", "stoneedge", "substitute", "sunnyday", "supercellslam", "superpower", "swagger", "tackle", "takedown", "terablast", "thunder", "thunderbolt", "thunderpunch", "thundershock", "thunderwave", "toxic", "voltswitch", "wildcharge"],
     "golem": [
         "ancientpower",
         "attract",
@@ -5262,6 +5337,7 @@
         "thunderpunch",
         "toxic"
     ],
+    "golemalola": ["allyswitch", "attract", "bide", "block", "bodypress", "bodyslam", "brickbreak", "brutalswing", "bulldoze", "charge", "chargebeam", "confide", "curse", "defensecurl", "dig", "discharge", "doubleedge", "doubleteam", "earthpower", "earthquake", "echoedvoice", "electricterrain", "electroweb", "endure", "explosion", "facade", "fireblast", "firepunch", "flamethrower", "fling", "focusblast", "focuspunch", "frustration", "gigaimpact", "gyroball", "hardpress", "headbutt", "heavyslam", "hiddenpower", "hyperbeam", "irondefense", "ironhead", "magnetrise", "megapunch", "meteorbeam", "metronome", "mudshot", "mudslap", "naturepower", "protect", "rest", "return", "roar", "rockblast", "rockpolish", "rockslide", "rockthrow", "rocktomb", "round", "sandstorm", "scaryface", "seismictoss", "selfdestruct", "shockwave", "sleeptalk", "smackdown", "snore", "spark", "stealthrock", "steamroller", "stompingtantrum", "stoneedge", "substitute", "sunnyday", "supercellslam", "superpower", "swagger", "tackle", "takedown", "terablast", "thunder", "thunderbolt", "thunderpunch", "thundershock", "thunderwave", "toxic", "voltswitch", "wildcharge"],
     "ponyta": [
         "agility",
         "allyswitch",
@@ -5331,6 +5407,7 @@
         "wildcharge",
         "willowisp"
     ],
+    "ponytagalar": ["agility", "allyswitch", "attract", "bodyslam", "bounce", "calmmind", "charm", "confusion", "dazzlinggleam", "doubleedge", "doublekick", "endure", "expandingforce", "facade", "fairywind", "futuresight", "growl", "healingwish", "healpulse", "highhorsepower", "horndrill", "hypnosis", "imprison", "irontail", "lowkick", "morningsun", "mysticalfire", "playrough", "protect", "psybeam", "psychic", "rest", "round", "sleeptalk", "snore", "stomp", "storedpower", "substitute", "swift", "tackle", "tailwhip", "takedown", "thrash", "wildcharge", "zenheadbutt"],
     "rapidash": [
         "agility",
         "allyswitch",
@@ -5410,6 +5487,7 @@
         "wildcharge",
         "willowisp"
     ],
+    "rapidashgalar": ["agility", "allyswitch", "attract", "batonpass", "bodyslam", "bounce", "calmmind", "charm", "confusion", "dazzlinggleam", "drillrun", "endure", "expandingforce", "facade", "fairywind", "futuresight", "gigaimpact", "growl", "healingwish", "healpulse", "highhorsepower", "hyperbeam", "imprison", "irontail", "lowkick", "magicroom", "megahorn", "mistyterrain", "mysticalfire", "payday", "playrough", "protect", "psybeam", "psychic", "psychicterrain", "psychocut", "quickattack", "rest", "round", "sleeptalk", "smartstrike", "snore", "stomp", "storedpower", "substitute", "swift", "swordsdance", "tackle", "tailwhip", "takedown", "throatchop", "trickroom", "wildcharge", "wonderroom", "zenheadbutt"],
     "slowpoke": [
         "afteryou",
         "amnesia",
@@ -5526,6 +5604,7 @@
         "zapcannon",
         "zenheadbutt"
     ],
+    "slowpokegalar": ["acid", "amnesia", "attract", "avalanche", "belch", "bellydrum", "blizzard", "block", "bodyslam", "brine", "bulldoze", "calmmind", "chillingwater", "confusion", "curse", "dig", "disable", "dive", "earthquake", "endure", "expandingforce", "facade", "fireblast", "flamethrower", "foulplay", "futuresight", "grassknot", "growl", "hail", "headbutt", "healpulse", "helpinghand", "hydropump", "icebeam", "icywind", "imprison", "irontail", "lightscreen", "liquidation", "mudshot", "payday", "protect", "psybeam", "psychic", "psychicterrain", "psychup", "psyshock", "raindance", "rest", "round", "safeguard", "scald", "shadowball", "skillswap", "slackoff", "sleeptalk", "snore", "snowscape", "stomp", "storedpower", "substitute", "sunnyday", "surf", "swift", "tackle", "takedown", "terablast", "thunderwave", "triattack", "trick", "trickroom", "waterfall", "waterpulse", "weatherball", "whirlpool", "wonderroom", "yawn", "zenheadbutt"],
     "magnemite": [
         "bide",
         "charge",
@@ -5602,6 +5681,8 @@
         "wildcharge",
         "zapcannon"
     ],
+    "farfetchd": ["acrobatics", "aerialace", "agility", "aircutter", "airslash", "attract", "batonpass", "bide", "bodyslam", "bravebird", "brutalswing", "captivate", "closecombat", "confide", "covet", "curse", "cut", "defog", "detect", "doubleedge", "doubleteam", "dualwingbeat", "endure", "facade", "falseswipe", "featherdance", "feint", "finalgambit", "firstimpression", "flail", "fly", "focusenergy", "foresight", "frustration", "furyattack", "furycutter", "gust", "headbutt", "heatwave", "helpinghand", "hiddenpower", "irontail", "knockoff", "laserfocus", "lastresort", "leafblade", "leer", "mimic", "mirrormove", "mudslap", "naturalgift", "nightslash", "ominouswind", "peck", "pluck", "poisonjab", "protect", "psychup", "quickattack", "rage", "razorleaf", "razorwind", "reflect", "rest", "retaliate", "return", "revenge", "roost", "round", "sandattack", "secretpower", "simplebeam", "skullbash", "skyattack", "slash", "sleeptalk", "snore", "solarblade", "steelwing", "substitute", "sunnyday", "swagger", "swift", "swordsdance", "tailwind", "takedown", "thief", "throatchop", "toxic", "trumpcard", "twister", "uproar", "uturn", "whirlwind", "wish", "workup", "yawn"],
+    "farfetchdgalar": ["assurance", "attract", "bodyslam", "bravebird", "brickbreak", "brutalswing", "closecombat", "counter", "covet", "curse", "defog", "detect", "doubleedge", "dualwingbeat", "endure", "facade", "feint", "finalgambit", "flail", "focusenergy", "furycutter", "helpinghand", "knockoff", "leafblade", "leer", "nightslash", "peck", "poisonjab", "protect", "quickattack", "quickguard", "rest", "retaliate", "revenge", "rocksmash", "round", "sandattack", "simplebeam", "skyattack", "slam", "sleeptalk", "snore", "solarblade", "steelwing", "substitute", "sunnyday", "superpower", "swordsdance", "throatchop", "workup"],
     "doduo": [
         "acrobatics",
         "acupressure",
@@ -6035,6 +6116,7 @@
         "zapcannon",
         "zenheadbutt"
     ],
+    "grimeralola":  ["acidarmor", "acidspray", "assurance", "attract", "belch", "bite", "bodyslam", "brickbreak", "brutalswing", "clearsmog", "confide", "crunch", "curse", "darkpulse", "dig", "disable", "doubleteam", "drainpunch", "embargo", "endure", "explosion", "facade", "fireblast", "firepunch", "flamethrower", "fling", "frustration", "gastroacid", "gigadrain", "gigaimpact", "gunkshot", "harden", "headbutt", "helpinghand", "hex", "hiddenpower", "hyperbeam", "icepunch", "imprison", "infestation", "knockoff", "meanlook", "megadrain", "memento", "metronome", "minimize", "mudshot", "mudslap", "painsplit", "payback", "poisonfang", "poisongas", "poisonjab", "pound", "poweruppunch", "protect", "pursuit", "quash", "raindance", "recycle", "rest", "return", "rockpolish", "rockslide", "rocktomb", "round", "sandstorm", "scaryface", "screech", "selfdestruct", "shadowball", "shadowsneak", "shockwave", "sleeptalk", "sludgebomb", "sludgewave", "snarl", "snore", "spite", "spitup", "stockpile", "stoneedge", "substitute", "sunnyday", "swagger", "swallow", "swift", "takedown", "taunt", "terablast", "thief", "thunder", "thunderbolt", "thunderpunch", "torment", "toxic", "venoshock", "zenheadbutt"],
     "shellder": [
         "aquaring",
         "attract",
@@ -6880,6 +6962,7 @@
         "wildcharge",
         "zapcannon"
     ],
+    "voltorbhisui": ["agility", "bulletseed", "charge", "chargebeam", "discharge", "doubleedge", "electricterrain", "electroball", "electroweb", "endure", "energyball", "explosion", "facade", "foulplay", "gigadrain", "grassknot", "grassyglide", "grassyterrain", "gyroball", "leafstorm", "leechseed", "protect", "raindance", "recycle", "reflect", "rest", "rollout", "screech", "seedbomb", "selfdestruct", "sleeptalk", "solarbeam", "stunspore", "substitute", "swift", "tackle", "takedown", "taunt", "terablast", "thief", "thunder", "thunderbolt", "thundershock", "thunderwave", "voltswitch", "wildcharge", "worryseed"],
     "electrode": [
         "agility",
         "bide",
@@ -6955,6 +7038,7 @@
         "wildcharge",
         "zapcannon"
     ],
+    "electrodehisui": ["agility", "bulletseed", "charge", "chargebeam", "chloroblast", "curse", "discharge", "doubleedge", "electricterrain", "electroball", "electroweb", "endure", "energyball", "explosion", "facade", "foulplay", "gigadrain", "gigaimpact", "grassknot", "grassyglide", "grassyterrain", "gyroball", "hyperbeam", "leafstorm", "protect", "raindance", "reflect", "rest", "rollout", "scaryface", "screech", "seedbomb", "selfdestruct", "sleeptalk", "solarbeam", "stunspore", "substitute", "supercellslam", "swift", "tackle", "takedown", "taunt", "terablast", "thief", "thunder", "thunderbolt", "thundershock", "thunderwave", "voltswitch", "wildcharge"],
     "exeggcute": [
         "absorb",
         "ancientpower",
@@ -7150,6 +7234,7 @@
         "worryseed",
         "zenheadbutt"
     ],
+    "exeggutoralola": ["absorb", "attract", "barrage", "block", "bodyslam", "breakingswipe", "brickbreak", "brutalswing", "bulldoze", "bulletseed", "calmmind", "celebrate", "confide", "confusion", "curse", "doubleedge", "doubleteam", "dracometeor", "dragoncheer", "dragonhammer", "dragonpulse", "dragontail", "dreameater", "earthquake", "eggbomb", "endure", "energyball", "explosion", "extrasensory", "facade", "flamethrower", "frustration", "gigadrain", "gigaimpact", "grassknot", "grassyglide", "grassyterrain", "gravity", "growth", "headbutt", "helpinghand", "hiddenpower", "hyperbeam", "hypnosis", "imprison", "infestation", "ironhead", "irontail", "knockoff", "leafstorm", "leechseed", "lightscreen", "lowkick", "magicalleaf", "megadrain", "naturepower", "outrage", "powerswap", "powerwhip", "protect", "psybeam", "psychic", "psychicnoise", "psychicterrain", "psychup", "psyshock", "reflect", "rest", "return", "round", "seedbomb", "selfdestruct", "skillswap", "sleeptalk", "sludgebomb", "snore", "solarbeam", "stompingtantrum", "storedpower", "stunspore", "substitute", "sunnyday", "superpower", "swagger", "swordsdance", "synthesis", "takedown", "telekinesis", "teleport", "terablast", "terrainpulse", "thief", "toxic", "trailblaze", "trick", "trickroom", "uproar", "woodhammer", "worryseed", "zenheadbutt"],
     "cubone": [
         "aerialace",
         "ancientpower",
@@ -8178,6 +8263,9 @@
         "whirlpool",
         "zapcannon"
     ],
+    "mrmime": ["aerialace", "allyswitch", "attract", "barrier", "batonpass", "bide", "bodyslam", "brickbreak", "calmmind", "captivate", "chargebeam", "charm", "confide", "confuseray", "confusion", "copycat", "counter", "covet", "curse", "dazzlinggleam", "doubleedge", "doubleslap", "doubleteam", "drainpunch", "dreameater", "dynamicpunch", "encore", "endure", "energyball", "expandingforce", "facade", "fakeout", "firepunch", "flash", "fling", "focusblast", "focuspunch", "followme", "foulplay", "frustration", "futuresight", "gigaimpact", "grassknot", "guardswap", "headbutt", "helpinghand", "hiddenpower", "hyperbeam", "hypnosis", "icepunch", "icywind", "infestation", "irondefense", "lightscreen", "magicalleaf", "magiccoat", "magicroom", "meditate", "megakick", "megapunch", "metronome", "mimic", "mistyterrain", "mudslap", "mysticalfire", "nastyplot", "naturalgift", "nightmare", "payback", "pound", "powersplit", "powerswap", "poweruppunch", "protect", "psybeam", "psychic", "psychicterrain", "psychup", "psyshock", "psywave", "quickguard", "rage", "raindance", "recycle", "reflect", "rest", "return", "roleplay", "round", "safeguard", "secretpower", "seismictoss", "shadowball", "shockwave", "signalbeam", "skillswap", "skullbash", "sleeptalk", "snatch", "snore", "solarbeam", "storedpower", "submission", "substitute", "suckerpunch", "sunnyday", "swagger", "takedown", "taunt", "teeterdance", "telekinesis", "teleport", "thief", "thunder", "thunderbolt", "thunderpunch", "thunderwave", "tickle", "torment", "toxic", "trick", "trickroom", "uproar", "wakeupslap", "wideguard", "wonderroom", "zapcannon", "zenheadbutt"],
+    "mrmimegalar": ["allyswitch", "attract", "avalanche", "batonpass", "blizzard", "bodyslam", "brickbreak", "calmmind", "charm", "confuseray", "confusion", "copycat", "dazzlinggleam", "doublekick", "drainpunch", "encore", "endure", "energyball", "expandingforce", "facade", "fakeout", "fling", "focusblast", "foulplay", "freezedry", "futuresight", "gigaimpact", "grassknot", "guardswap", "hail", "helpinghand", "hyperbeam", "hypnosis", "icebeam", "icepunch", "iceshard", "iciclespear", "icywind", "irondefense", "lightscreen", "magicroom", "megakick", "megapunch", "metronome", "mimic", "mirrorcoat", "mistyterrain", "nastyplot", "payback", "pound", "powersplit", "powerswap", "protect", "psybeam", "psychic", "psychicterrain", "psyshock", "raindance", "rapidspin", "recycle", "reflect", "rest", "roleplay", "round", "safeguard", "screech", "shadowball", "skillswap", "sleeptalk", "snore", "solarbeam", "stompingtantrum", "storedpower", "substitute", "suckerpunch", "sunnyday", "taunt", "teeterdance", "thief", "thunder", "thunderbolt", "thunderwave", "tickle", "trick", "trickroom", "tripleaxel", "uproar", "wonderroom", "zenheadbutt"],
+    "mrrime": ["afteryou", "allyswitch", "attract", "avalanche", "batonpass", "blizzard", "block", "bodyslam", "brickbreak", "calmmind", "charm", "confusion", "copycat", "dazzlinggleam", "doublekick", "drainpunch", "encore", "endure", "energyball", "expandingforce", "facade", "faketears", "fling", "focusblast", "foulplay", "freezedry", "futuresight", "gigaimpact", "grassknot", "guardswap", "hail", "helpinghand", "hyperbeam", "hypnosis", "icebeam", "icepunch", "iceshard", "iciclespear", "icywind", "irondefense", "lightscreen", "magicroom", "megakick", "megapunch", "metronome", "mimic", "mirrorcoat", "mistyterrain", "nastyplot", "payback", "pound", "powerswap", "protect", "psybeam", "psychic", "psychicterrain", "psyshock", "raindance", "rapidspin", "recycle", "reflect", "rest", "roleplay", "round", "safeguard", "screech", "shadowball", "skillswap", "slackoff", "sleeptalk", "snore", "solarbeam", "stompingtantrum", "storedpower", "substitute", "suckerpunch", "sunnyday", "taunt", "teeterdance", "thief", "thunder", "thunderbolt", "thunderwave", "trick", "trickroom", "tripleaxel", "uproar", "wonderroom", "zenheadbutt"],
     "smoochum": [
         "attract",
         "auroraveil",
@@ -13064,6 +13152,7 @@
         "whirlpool",
         "yawn"
     ],
+    "wooperpaldea": ["acidspray", "afteryou", "amnesia", "ancientpower", "bodypress", "bodyslam", "bulldoze", "chillingwater", "counter", "curse", "dig", "doubleedge", "doublekick", "earthpower", "earthquake", "endure", "facade", "gunkshot", "haze", "helpinghand", "hydropump", "liquidation", "lowkick", "mist", "mudshot", "mudslap", "poisonjab", "poisontail", "protect", "raindance", "recover", "rest", "rockslide", "rocktomb", "sandstorm", "slam", "sleeptalk", "sludgebomb", "sludgewave", "spikes", "spitup", "stealthrock", "stockpile", "stompingtantrum", "stoneedge", "substitute", "surf", "swallow", "tackle", "tailwhip", "takedown", "terablast", "toxic", "toxicspikes", "trailblaze", "venoshock", "waterfall", "waterpulse", "yawn"],
     "murkrow": [
         "acrobatics",
         "aerialace",
@@ -13891,6 +13980,7 @@
         "withdraw",
         "wrap"
     ],
+    "sneaselhisui": ["acidspray", "aerialace", "agility", "brickbreak", "bulkup", "calmmind", "closecombat", "coaching", "counter", "dig", "doublehit", "endure", "facade", "fakeout", "falseswipe", "feint", "fling", "focusblast", "focuspunch", "gigaimpact", "grassknot", "gunkshot", "honeclaws", "lashout", "leer", "lowkick", "lowsweep", "metalclaw", "nastyplot", "nightslash", "poisonjab", "poisontail", "protect", "quickattack", "quickguard", "raindance", "rest", "reversal", "rocksmash", "scratch", "screech", "shadowball", "shadowclaw", "slash", "sleeptalk", "sludgebomb", "sludgewave", "spite", "substitute", "sunnyday", "swift", "switcheroo", "swordsdance", "takedown", "taunt", "terablast", "thief", "throatchop", "toxic", "toxicspikes", "trailblaze", "vacuumwave", "venoshock", "xscissor"],
     "teddiursa": [
         "aerialace",
         "attract",
@@ -16148,6 +16238,7 @@
         "whirlpool",
         "workup"
     ],
+    "zigzagoongalar": ["assurance", "attract", "babydolleyes", "blizzard", "bodyslam", "counter", "dig", "doubleedge", "endure", "facade", "faketears", "fling", "grassknot", "gunkshot", "headbutt", "helpinghand", "hypervoice", "icebeam", "icywind", "irontail", "knockoff", "lashout", "leer", "lick", "mudshot", "partingshot", "payback", "pinmissile", "protect", "quickguard", "raindance", "rest", "retaliate", "round", "sandattack", "scaryface", "screech", "seedbomb", "shadowball", "sleeptalk", "snarl", "snore", "substitute", "sunnyday", "surf", "swift", "tackle", "takedown", "taunt", "thief", "thunder", "thunderbolt", "thunderwave", "trick", "whirlpool", "workup"],
     "linoone": [
         "attract",
         "babydolleyes",
@@ -16239,6 +16330,7 @@
         "whirlpool",
         "workup"
     ],
+    "linoonegalar": ["assurance", "attract", "babydolleyes", "blizzard", "bodypress", "bodyslam", "counter", "dig", "doubleedge", "endure", "facade", "faketears", "fling", "furyswipes", "gigaimpact", "grassknot", "gunkshot", "headbutt", "helpinghand", "honeclaws", "hyperbeam", "hypervoice", "icebeam", "icywind", "irontail", "lashout", "leer", "lick", "mudshot", "nightslash", "payback", "pinmissile", "protect", "raindance", "rest", "retaliate", "round", "sandattack", "scaryface", "screech", "seedbomb", "shadowball", "shadowclaw", "sleeptalk", "snarl", "snore", "stompingtantrum", "substitute", "sunnyday", "surf", "swift", "switcheroo", "tackle", "takedown", "taunt", "thief", "throatchop", "thunder", "thunderbolt", "thunderwave", "trick", "whirlpool", "workup"],
     "wurmple": [
         "bugbite",
         "electroweb",
@@ -27112,6 +27204,7 @@
         "wonderroom",
         "zenheadbutt"
     ],
+    "mimejr": ["allyswitch", "attract", "barrier", "batonpass", "brickbreak", "calmmind", "captivate", "chargebeam", "charm", "confide", "confuseray", "confusion", "copycat", "covet", "dazzlinggleam", "doubleslap", "doubleteam", "drainpunch", "dreameater", "encore", "endure", "facade", "fakeout", "flash", "fling", "focuspunch", "frustration", "futuresight", "grassknot", "headbutt", "healingwish", "helpinghand", "hiddenpower", "hypnosis", "icywind", "infestation", "lightscreen", "magiccoat", "magicroom", "meditate", "mimic", "mistyterrain", "mudslap", "nastyplot", "naturalgift", "pound", "powersplit", "protect", "psybeam", "psychic", "psychicterrain", "psychup", "psyshock", "raindance", "recycle", "reflect", "rest", "return", "roleplay", "round", "safeguard", "secretpower", "shadowball", "shockwave", "signalbeam", "skillswap", "sleeptalk", "snatch", "snore", "solarbeam", "storedpower", "substitute", "suckerpunch", "sunnyday", "swagger", "taunt", "teeterdance", "telekinesis", "thief", "thunder", "thunderbolt", "thunderwave", "tickle", "torment", "toxic", "trick", "trickroom", "uproar", "wakeupslap", "wonderroom"],
     "chatot": [
         "aerialace",
         "agility",
@@ -31508,6 +31601,7 @@
         "yawn",
         "zenheadbutt"
     ],
+    "darumakagalar": ["attract", "avalanche", "bellydrum", "bite", "blizzard", "brickbreak", "dig", "encore", "endure", "facade", "fireblast", "firefang", "firepunch", "firespin", "flamethrower", "flamewheel", "flareblitz", "fling", "focusenergy", "focuspunch", "freezedry", "grassknot", "gyroball", "hammerarm", "headbutt", "heatwave", "icebeam", "icefang", "icepunch", "incinerate", "megakick", "megapunch", "overheat", "powdersnow", "poweruppunch", "protect", "rest", "rockslide", "rocktomb", "round", "sleeptalk", "snore", "solarbeam", "substitute", "sunnyday", "superpower", "tackle", "takedown", "taunt", "thief", "thrash", "uproar", "uturn", "willowisp", "workup", "yawn", "zenheadbutt"],
     "maractus": [
         "absorb",
         "acupressure",
@@ -31812,6 +31906,7 @@
         "wonderroom",
         "zenheadbutt"
     ],
+    "yamaskgalar": ["allyswitch", "astonish", "attract", "brutalswing", "calmmind", "craftyshield", "curse", "darkpulse", "destinybond", "disable", "earthpower", "earthquake", "endure", "energyball", "facade", "faketears", "guardsplit", "haze", "hex", "imprison", "irondefense", "meanlook", "memento", "nastyplot", "nightshade", "payback", "poltergeist", "powersplit", "protect", "psychic", "raindance", "rest", "rockslide", "rocktomb", "round", "safeguard", "sandstorm", "shadowball", "skillswap", "slam", "sleeptalk", "snore", "substitute", "thief", "toxicspikes", "trick", "trickroom", "willowisp", "wonderroom", "zenheadbutt"],
     "tirtouga": [
         "ancientpower",
         "aquajet",
@@ -32180,6 +32275,7 @@
         "uproar",
         "uturn"
     ],
+    "zoruahisui": ["agility", "bittermalice", "burningjealousy", "calmmind", "comeuppance", "confuseray", "curse", "darkpulse", "detect", "dig", "endure", "extrasensory", "facade", "faketears", "fling", "focuspunch", "foulplay", "gigaimpact", "hex", "honeclaws", "hyperbeam", "icywind", "imprison", "knockoff", "lashout", "leer", "memento", "nastyplot", "nightshade", "painsplit", "phantomforce", "protect", "psychup", "raindance", "rest", "roar", "scratch", "shadowball", "shadowclaw", "shadowsneak", "skittersmack", "sleeptalk", "sludgebomb", "snarl", "snowscape", "spite", "substitute", "swift", "takedown", "taunt", "terablast", "thief", "torment", "trick", "uturn", "willowisp"],
     "minccino": [
         "afteryou",
         "alluringvoice",
@@ -34326,6 +34422,7 @@
         "venoshock",
         "yawn"
     ],
+    "stunfiskgalar": ["astonish", "attract", "bind", "bounce", "bulldoze", "counter", "crunch", "curse", "dig", "earthpower", "earthquake", "endure", "facade", "fissure", "flail", "flashcannon", "foulplay", "icefang", "irondefense", "lashout", "metalclaw", "metalsound", "muddywater", "mudshot", "mudslap", "painsplit", "payback", "protect", "raindance", "reflecttype", "rest", "revenge", "rockslide", "rocktomb", "round", "sandstorm", "scald", "screech", "sleeptalk", "sludgebomb", "sludgewave", "snaptrap", "snore", "spite", "stealthrock", "steelbeam", "stompingtantrum", "stoneedge", "substitute", "suckerpunch", "surf", "tackle", "terrainpulse", "thunderwave", "uproar", "watergun", "yawn"],
     "mienfoo": [
         "acrobatics",
         "aerialace",
@@ -35947,6 +36044,7 @@
         "willowisp",
         "workup"
     ],
+    "flabebe": ["afteryou", "alluringvoice", "allyswitch", "aromatherapy", "attract", "batonpass", "calmmind", "camouflage", "captivate", "charm", "chillingwater", "confide", "copycat", "covet", "dazzlinggleam", "disarmingvoice", "doubleteam", "drainingkiss", "echoedvoice", "endeavor", "endure", "energyball", "facade", "fairywind", "flash", "frustration", "gigadrain", "grassknot", "grassyterrain", "healbell", "helpinghand", "hiddenpower", "lightscreen", "luckychant", "magicalleaf", "magiccoat", "mistyterrain", "moonblast", "naturepower", "petalblizzard", "petaldance", "pollenpuff", "protect", "psychic", "raindance", "razorleaf", "rest", "return", "round", "safeguard", "secretpower", "seedbomb", "sleeptalk", "snore", "solarbeam", "storedpower", "substitute", "sunnyday", "swagger", "swift", "synthesis", "tackle", "tearfullook", "terablast", "toxic", "trailblaze", "vinewhip", "wish", "worryseed"],
     "floette": [
         "afteryou",
         "alluringvoice",
@@ -37741,6 +37839,7 @@
         "watergun",
         "waterpulse"
     ],
+    "sliggoohisui": ["absorb", "acidarmor", "acidspray", "blizzard", "bodyslam", "charm", "chillingwater", "curse", "dracometeor", "dragonbreath", "dragonpulse", "endure", "facade", "flail", "flashcannon", "gyroball", "heavyslam", "icebeam", "icespinner", "ironhead", "muddywater", "mudshot", "outrage", "protect", "raindance", "rest", "rockslide", "rocktomb", "sandstorm", "shelter", "skittersmack", "sleeptalk", "sludgebomb", "sludgewave", "steelbeam", "substitute", "sunnyday", "tackle", "takedown", "terablast", "thunder", "thunderbolt", "watergun", "waterpulse"],
     "phantump": [
         "allyswitch",
         "astonish",
@@ -38065,6 +38164,7 @@
         "toxic",
         "waterpulse"
     ],
+    "avalugghisui": ["avalanche", "bite", "blizzard", "bodypress", "bodyslam", "bulldoze", "chillingwater", "crunch", "curse", "dig", "doubleedge", "earthquake", "endure", "facade", "gigaimpact", "gyroball", "harden", "hardpress", "heavyslam", "highhorsepower", "hyperbeam", "icebeam", "icefang", "icespinner", "iciclespear", "icywind", "irondefense", "ironhead", "meteorbeam", "mountaingale", "powdersnow", "protect", "raindance", "rapidspin", "recover", "rest", "rockblast", "rockslide", "rocktomb", "sandstorm", "scaryface", "sleeptalk", "snowscape", "stealthrock", "stompingtantrum", "stoneedge", "substitute", "tackle", "takedown", "terablast", "wideguard"],
     "noibat": [
         "absorb",
         "acrobatics",
@@ -39318,6 +39418,7 @@
         "trailblaze",
         "zenheadbutt"
     ],
+    "lycanrocmidnight": ["attract", "bite", "bodyslam", "brickbreak", "bulkup", "bulldoze", "charm", "closecombat", "confide", "counter", "covet", "crunch", "dig", "doubleedge", "doubleteam", "dualchop", "earthpower", "echoedvoice", "endeavor", "endure", "facade", "firefang", "firepunch", "fling", "focuspunch", "foulplay", "frustration", "gigaimpact", "helpinghand", "hiddenpower", "howl", "hypervoice", "irondefense", "ironhead", "irontail", "knockoff", "laserfocus", "lashout", "lastresort", "leer", "lowsweep", "megakick", "megapunch", "mudslap", "odorsleuth", "outrage", "payback", "playrough", "protect", "psychicfangs", "rest", "return", "revenge", "reversal", "roar", "rockblast", "rockclimb", "rockpolish", "rockslide", "rockthrow", "rocktomb", "round", "sandattack", "sandstorm", "scaryface", "shadowclaw", "sleeptalk", "snarl", "snore", "stealthrock", "stompingtantrum", "stoneedge", "substitute", "suckerpunch", "sunnyday", "swagger", "swordsdance", "tackle", "takedown", "taunt", "terablast", "throatchop", "thunderfang", "thunderpunch", "toxic", "trailblaze", "upperhand", "uproar", "zenheadbutt"],
     "mareanie": [
         "acidspray",
         "afteryou",
@@ -40528,6 +40629,8 @@
         "whirlpool",
         "wonderroom"
     ],
+    "jangmoo": ["aerialace", "aquatail", "attract", "bide", "bodyslam", "breakingswipe", "brickbreak", "bulkup", "bulldoze", "confide", "counter", "doubleteam", "dracometeor", "dragonbreath", "dragoncheer", "dragonclaw", "dragondance", "dragonpulse", "dragontail", "dualchop", "earthquake", "echoedvoice", "endure", "facade", "falseswipe", "fling", "focusblast", "focuspunch", "frustration", "headbutt", "hiddenpower", "irondefense", "ironhead", "irontail", "leer", "lowkick", "nobleroar", "outrage", "payback", "protect", "rest", "return", "reversal", "roar", "rockslide", "rocktomb", "round", "safeguard", "sandstorm", "scaleshot", "scaryface", "screech", "shadowclaw", "sleeptalk", "snore", "substitute", "swagger", "swordsdance", "tackle", "takedown", "taunt", "terablast", "toxic", "uproar", "workup", "xscissor"],
+    "hakamoo": ["aerialace", "aquatail", "attract", "autotomize", "bide", "bodyslam", "breakingswipe", "brickbreak", "brutalswing", "bulkup", "bulldoze", "closecombat", "coaching", "confide", "doubleedge", "doubleteam", "dracometeor", "dragoncheer", "dragonclaw", "dragondance", "dragonpulse", "dragontail", "drainpunch", "dualchop", "earthquake", "echoedvoice", "endure", "facade", "falseswipe", "fling", "focusblast", "focuspunch", "frustration", "headbutt", "hiddenpower", "irondefense", "ironhead", "irontail", "leer", "lowkick", "megakick", "megapunch", "metalclaw", "nobleroar", "outrage", "payback", "protect", "rest", "return", "reversal", "roar", "rockslide", "rocktomb", "round", "safeguard", "sandstorm", "scaleshot", "scaryface", "screech", "shadowclaw", "skyuppercut", "sleeptalk", "snore", "substitute", "sunnyday", "swagger", "swordsdance", "tackle", "takedown", "taunt", "terablast", "throatchop", "toxic", "upperhand", "uproar", "vacuumwave", "workup", "xscissor"],
     "cosmog": [
         "splash",
         "teleport"

@@ -314,6 +314,13 @@
             "H": "Hustle"
         }
     },
+    "rattataalola": {
+		"num": 19,
+		"name": "Rattata-Alola",
+		"types": ["Dark", "Normal"],
+		"baseStats": { "hp": 30, "atk": 56, "def": 35, "spa": 25, "spd": 35, "spe": 72 },
+		"abilities": { "0": "Gluttony", "1": "Hustle", "H": "Thick Fat" }
+    },
     "raticate": {
         "num": 20,
         "name": "Raticate",
@@ -333,6 +340,13 @@
             "1": "Guts",
             "H": "Hustle"
         }
+    },
+    "raticatealola": {
+		"num": 20,
+		"name": "Raticate-Alola",
+		"types": ["Dark", "Normal"],
+		"baseStats": { "hp": 75, "atk": 71, "def": 70, "spa": 40, "spd": 80, "spe": 77 },
+		"abilities": { "0": "Gluttony", "1": "Hustle", "H": "Thick Fat" }
     },
     "spearow": {
         "num": 21,
@@ -452,6 +466,13 @@
             "H": "Sand Rush"
         }
     },
+    "sandshrewalola": {
+		"num": 27,
+		"name": "Sandshrew-Alola",
+		"types": ["Ice", "Steel"],
+		"baseStats": { "hp": 50, "atk": 75, "def": 90, "spa": 10, "spd": 35, "spe": 40 },
+		"abilities": { "0": "Snow Cloak", "H": "Slush Rush" }
+    },
     "nidorina": {
         "num": 30,
         "name": "Nidorina",
@@ -530,6 +551,13 @@
             "0": "Flash Fire",
             "H": "Drought"
         }
+    },
+    "vulpixalola": {
+		"num": 37,
+		"name": "Vulpix-Alola",
+		"types": ["Ice"],
+		"baseStats": { "hp": 38, "atk": 41, "def": 40, "spa": 50, "spd": 65, "spe": 65 },
+		"abilities": { "0": "Snow Cloak", "H": "Snow Warning" }
     },
     "jigglypuff": {
         "num": 39,
@@ -695,6 +723,20 @@
             "H": "Sand Force"
         }
     },
+    "diglettalola": {
+		"num": 50,
+		"name": "Diglett-Alola",
+		"types": ["Ground", "Steel"],
+		"baseStats": { "hp": 10, "atk": 55, "def": 30, "spa": 35, "spd": 45, "spe": 90 },
+		"abilities": { "0": "Sand Veil", "1": "Tangling Hair", "H": "Sand Force" }
+    },
+    "dugtrioalola": {
+		"num": 51,
+		"name": "Dugtrio-Alola",
+		"types": ["Ground", "Steel"],
+		"baseStats": { "hp": 35, "atk": 100, "def": 60, "spa": 50, "spd": 70, "spe": 110 },
+		"abilities": { "0": "Sand Veil", "1": "Tangling Hair", "H": "Sand Force" }
+    },
     "meowth": {
         "num": 52,
         "name": "Meowth",
@@ -714,6 +756,20 @@
             "1": "Technician",
             "H": "Unnerve"
         }
+    },
+    "meowthalola": {
+		"num": 52,
+		"name": "Meowth-Alola",
+		"types": ["Dark"],
+		"baseStats": { "hp": 40, "atk": 35, "def": 35, "spa": 50, "spd": 40, "spe": 90 },
+		"abilities": { "0": "Pickup", "1": "Technician", "H": "Rattled" }
+    },
+    "meowthgalar": {
+            "num": 52,
+            "name": "Meowth-Galar",
+            "types": ["Steel"],
+            "baseStats": { "hp": 50, "atk": 65, "def": 55, "spa": 40, "spd": 40, "spe": 40 },
+            "abilities": { "0": "Pickup", "1": "Tough Claws", "H": "Unnerve" }
     },
     "persian": {
         "num": 53,
@@ -814,6 +870,13 @@
             "1": "Flash Fire",
             "H": "Justified"
         }
+    },
+    "growlithehisui": {
+		"num": 58,
+		"name": "Growlithe-Hisui",
+		"types": ["Fire", "Rock"],
+		"baseStats": { "hp": 60, "atk": 75, "def": 45, "spa": 65, "spd": 50, "spe": 55 },
+		"abilities": { "0": "Intimidate", "1": "Flash Fire", "H": "Rock Head" }
     },
     "poliwag": {
         "num": 60,
@@ -1058,6 +1121,13 @@
             "H": "Sand Veil"
         }
     },
+    "geodudealola": {
+		"num": 74,
+		"name": "Geodude-Alola",
+		"types": ["Rock", "Electric"],
+		"baseStats": { "hp": 40, "atk": 80, "def": 100, "spa": 30, "spd": 30, "spe": 20 },
+		"abilities": { "0": "Magnet Pull", "1": "Sturdy", "H": "Galvanize" }
+    },
     "graveler": {
         "num": 75,
         "name": "Graveler",
@@ -1078,6 +1148,13 @@
             "1": "Sturdy",
             "H": "Sand Veil"
         }
+    },
+    "graveleralola": {
+		"num": 75,
+		"name": "Graveler-Alola",
+		"types": ["Rock", "Electric"],
+		"baseStats": { "hp": 55, "atk": 95, "def": 115, "spa": 45, "spd": 45, "spe": 35 },
+		"abilities": { "0": "Magnet Pull", "1": "Sturdy", "H": "Galvanize" }
     },
     "golem": {
         "num": 76,
@@ -1100,6 +1177,13 @@
             "H": "Sand Veil"
         }
     },
+    "golemalola": {
+		"num": 76,
+		"name": "Golem-Alola",
+		"types": ["Rock", "Electric"],
+		"baseStats": { "hp": 80, "atk": 120, "def": 130, "spa": 55, "spd": 65, "spe": 45 },
+		"abilities": { "0": "Magnet Pull", "1": "Sturdy", "H": "Galvanize" }
+    },
     "ponyta": {
         "num": 77,
         "name": "Ponyta",
@@ -1120,6 +1204,13 @@
             "H": "Flame Body"
         }
     },
+    "ponytagalar": {
+		"num": 77,
+		"name": "Ponyta-Galar",
+		"types": ["Psychic"],
+		"baseStats": { "hp": 50, "atk": 85, "def": 55, "spa": 65, "spd": 65, "spe": 90 },
+		"abilities": { "0": "Run Away", "1": "Pastel Veil", "H": "Anticipation" }
+    },
     "rapidash": {
         "num": 78,
         "name": "Rapidash",
@@ -1139,6 +1230,13 @@
             "1": "Flash Fire",
             "H": "Flame Body"
         }
+    },
+    "rapidashgalar": {
+		"num": 78,
+		"name": "Rapidash-Galar",
+		"types": ["Psychic", "Fairy"],
+		"baseStats": { "hp": 65, "atk": 100, "def": 70, "spa": 80, "spd": 80, "spe": 105 },
+		"abilities": { "0": "Run Away", "1": "Pastel Veil", "H": "Anticipation" }
     },
     "slowpoke": {
         "num": 79,
@@ -1161,6 +1259,13 @@
             "H": "Regenerator"
         }
     },
+    "slowpokegalar": {
+		"num": 79,
+		"name": "Slowpoke-Galar",
+		"types": ["Psychic"],
+		"baseStats": { "hp": 90, "atk": 65, "def": 65, "spa": 40, "spd": 40, "spe": 15 },
+		"abilities": { "0": "Gluttony", "1": "Own Tempo", "H": "Regenerator" }
+    },
     "magnemite": {
         "num": 81,
         "name": "Magnemite",
@@ -1181,6 +1286,20 @@
             "1": "Sturdy",
             "H": "Analytic"
         }
+    },
+    "farfetchd": {
+		"num": 83,
+		"name": "Farfetch'd",
+		"types": ["Normal", "Flying"],
+		"baseStats": { "hp": 52, "atk": 90, "def": 55, "spa": 58, "spd": 62, "spe": 60 },
+		"abilities": { "0": "Keen Eye", "1": "Inner Focus", "H": "Defiant" }
+    },
+    "farfetchdgalar": {
+            "num": 83,
+            "name": "Farfetch'd-Galar",
+            "baseSpecies": "Farfetch\u2019d",
+            "baseStats": { "hp": 52, "atk": 95, "def": 55, "spa": 58, "spd": 62, "spe": 55 },
+            "abilities": { "0": "Steadfast", "H": "Scrappy" }
     },
     "doduo": {
         "num": 84,
@@ -1284,6 +1403,13 @@
             "1": "Sticky Hold",
             "H": "Poison Touch"
         }
+    },
+    "grimeralola": {
+		"num": 88,
+		"name": "Grimer-Alola",
+		"types": ["Poison", "Dark"],
+		"baseStats": { "hp": 80, "atk": 80, "def": 50, "spa": 40, "spd": 50, "spe": 25 },
+		"abilities": { "0": "Poison Touch", "1": "Gluttony", "H": "Power of Alchemy" }
     },
     "shellder": {
         "num": 90,
@@ -1464,6 +1590,13 @@
             "H": "Aftermath"
         }
     },
+    "voltorbhisui": {
+		"num": 100,
+		"name": "Voltorb-Hisui",
+		"types": ["Electric", "Grass"],
+		"baseStats": { "hp": 40, "atk": 30, "def": 50, "spa": 55, "spd": 55, "spe": 100 },
+		"abilities": { "0": "Soundproof", "1": "Static", "H": "Aftermath" }
+    },
     "electrode": {
         "num": 101,
         "name": "Electrode",
@@ -1483,6 +1616,13 @@
             "1": "Static",
             "H": "Aftermath"
         }
+    },
+    "electrodehisui": {
+		"num": 101,
+		"name": "Electrode-Hisui",
+		"types": ["Electric", "Grass"],
+		"baseStats": { "hp": 60, "atk": 50, "def": 70, "spa": 80, "spd": 80, "spe": 150 },
+		"abilities": { "0": "Soundproof", "1": "Static", "H": "Aftermath" }
     },
     "exeggcute": {
         "num": 102,
@@ -1523,6 +1663,13 @@
             "0": "Chlorophyll",
             "H": "Harvest"
         }
+    },
+    "exeggutoralola": {
+		"num": 103,
+		"name": "Exeggutor-Alola",
+		"types": ["Grass", "Dragon"],
+		"baseStats": { "hp": 95, "atk": 105, "def": 85, "spa": 125, "spd": 75, "spe": 45 },
+		"abilities": { "0": "Frisk", "H": "Harvest" }
     },
     "cubone": {
         "num": 104,
@@ -1724,6 +1871,20 @@
             "1": "Natural Cure",
             "H": "Analytic"
         }
+    },
+    "mrmime": {
+		"num": 122,
+		"name": "Mr. Mime",
+		"types": ["Psychic", "Fairy"],
+		"baseStats": { "hp": 40, "atk": 45, "def": 65, "spa": 100, "spd": 120, "spe": 90 },
+		"abilities": { "0": "Soundproof", "1": "Filter", "H": "Technician" }
+    },
+	"mrmimegalar": {
+		"num": 122,
+		"name": "Mr. Mime-Galar",
+		"types": ["Ice", "Psychic"],
+		"baseStats": { "hp": 50, "atk": 65, "def": 65, "spa": 90, "spd": 90, "spe": 100 },
+		"abilities": { "0": "Vital Spirit", "1": "Screen Cleaner", "H": "Ice Body" }
     },
     "jynx": {
         "num": 124,
@@ -2749,6 +2910,13 @@
             "H": "Unaware"
         }
     },
+    "wooperpaldea": {
+		"num": 194,
+		"name": "Wooper-Paldea",
+		"types": ["Poison", "Ground"],
+		"baseStats": { "hp": 55, "atk": 45, "def": 45, "spa": 25, "spd": 25, "spe": 15 },
+		"abilities": { "0": "Poison Point", "1": "Water Absorb", "H": "Unaware" }
+    },
     "murkrow": {
         "num": 198,
         "name": "Murkrow",
@@ -2926,6 +3094,13 @@
             "1": "Gluttony",
             "H": "Contrary"
         }
+    },
+    "sneaselhisui": {
+		"num": 215,
+		"name": "Sneasel-Hisui",
+		"baseSpecies": "Sneasel",
+		"baseStats": { "hp": 55, "atk": 95, "def": 55, "spa": 35, "spd": 75, "spe": 115 },
+		"abilities": { "0": "Inner Focus", "1": "Keen Eye", "H": "Pickpocket" }
     },
     "teddiursa": {
         "num": 216,
@@ -3466,6 +3641,13 @@
             "H": "Quick Feet"
         }
     },
+    "zigzagoongalar": {
+		"num": 263,
+		"name": "Zigzagoon-Galar",
+		"types": ["Dark", "Normal"],
+		"baseStats": { "hp": 38, "atk": 30, "def": 41, "spa": 30, "spd": 41, "spe": 60 },
+		"abilities": { "0": "Pickup", "1": "Gluttony", "H": "Quick Feet" }
+    },
     "linoone": {
         "num": 264,
         "name": "Linoone",
@@ -3485,6 +3667,13 @@
             "1": "Gluttony",
             "H": "Quick Feet"
         }
+    },
+    "linoonegalar": {
+		"num": 264,
+		"name": "Linoone-Galar",
+		"types": ["Dark", "Normal"],
+		"baseStats": { "hp": 78, "atk": 70, "def": 61, "spa": 50, "spd": 61, "spe": 100 },
+		"abilities": { "0": "Pickup", "1": "Gluttony", "H": "Quick Feet" }
     },
     "wurmple": {
         "num": 265,
@@ -6183,6 +6372,13 @@
             "H": "Rattled"
         }
     },
+    "mimejr": {
+		"num": 439,
+		"name": "Mime Jr.",
+		"types": ["Psychic", "Fairy"],
+		"baseStats": { "hp": 20, "atk": 25, "def": 45, "spa": 70, "spd": 90, "spe": 60 },
+		"abilities": { "0": "Soundproof", "1": "Filter", "H": "Technician" }
+    },
     "happiny": {
         "num": 440,
         "name": "Happiny",
@@ -7539,6 +7735,13 @@
             "H": "Inner Focus"
         }
     },
+    "darumakagalar": {
+		"num": 554,
+		"name": "Darumaka-Galar",
+		"types": ["Ice"],
+		"baseStats": { "hp": 70, "atk": 90, "def": 45, "spa": 15, "spd": 45, "spe": 50 },
+		"abilities": { "0": "Hustle", "H": "Inner Focus" }
+    },
     "maractus": {
         "num": 556,
         "name": "Maractus",
@@ -7618,6 +7821,13 @@
         "abilities": {
             "0": "Mummy"
         }
+    },
+    "yamaskgalar": {
+		"num": 562,
+		"name": "Yamask-Galar",
+		"types": ["Ground", "Ghost"],
+		"baseStats": { "hp": 38, "atk": 55, "def": 85, "spa": 30, "spd": 65, "spe": 30 },
+		"abilities": { "0": "Wandering Spirit" }
     },
     "tirtouga": {
         "num": 564,
@@ -7717,6 +7927,13 @@
         "abilities": {
             "0": "Illusion"
         }
+    },
+    "zoruahisui": {
+		"num": 570,
+		"name": "Zorua-Hisui",
+		"types": ["Normal", "Ghost"],
+		"baseStats": { "hp": 35, "atk": 60, "def": 40, "spa": 85, "spd": 40, "spe": 70 },
+		"abilities": { "0": "Illusion" }
     },
     "minccino": {
         "num": 572,
@@ -8343,6 +8560,13 @@
             "H": "Overcoat"
         }
     },
+    "stunfiskgalar": {
+		"num": 618,
+		"name": "Stunfisk-Galar",
+		"baseSpecies": "Stunfisk",
+		"baseStats": { "hp": 109, "atk": 81, "def": 99, "spa": 66, "spd": 84, "spe": 32 },
+		"abilities": { "0": "Mimicry" }
+    },
     "mienfoo": {
         "num": 619,
         "name": "Mienfoo",
@@ -8801,6 +9025,13 @@
             "1": "Unnerve",
             "H": "Moxie"
         }
+    },
+    "flabebe": {
+		"num": 669,
+		"name": "Flabebe",
+		"types": ["Fairy"],
+		"baseStats": { "hp": 44, "atk": 38, "def": 39, "spa": 61, "spd": 79, "spe": 42 },
+		"abilities": { "0": "Flower Veil", "H": "Symbiosis" }
     },
     "floette": {
         "num": 670,
@@ -9263,6 +9494,13 @@
             "H": "Gooey"
         }
     },
+    "sliggoohisui": {
+		"num": 705,
+		"name": "Sliggoo-Hisui",
+		"types": ["Steel", "Dragon"],
+		"baseStats": { "hp": 58, "atk": 75, "def": 83, "spa": 83, "spd": 113, "spe": 40 },
+		"abilities": { "0": "Sap Sipper", "1": "Shell Armor", "H": "Gooey" }
+    },
     "phantump": {
         "num": 708,
         "name": "Phantump",
@@ -9346,6 +9584,13 @@
             "1": "Ice Body",
             "H": "Sturdy"
         }
+    },
+    "avalugghisui": {
+		"num": 713,
+		"name": "Avalugg-Hisui",
+		"types": ["Ice", "Rock"],
+		"baseStats": { "hp": 95, "atk": 127, "def": 184, "spa": 34, "spd": 36, "spe": 38 },
+		"abilities": { "0": "Strong Jaw", "1": "Ice Body", "H": "Sturdy" }
     },
     "noibat": {
         "num": 714,
@@ -9708,6 +9953,13 @@
             "S": "Own Tempo"
         }
     },
+    "lycanrocmidnight": {
+		"num": 745,
+		"name": "Lycanroc-Midnight",
+		"types": ["Rock"],
+		"baseStats": { "hp": 85, "atk": 115, "def": 75, "spa": 55, "spd": 75, "spe": 82 },
+		"abilities": { "0": "Keen Eye", "1": "Vital Spirit", "H": "No Guard" }
+    },
     "mareanie": {
         "num": 747,
         "name": "Mareanie",
@@ -10069,6 +10321,20 @@
             "1": "Strong Jaw",
             "H": "Wonder Skin"
         }
+    },
+    "jangmoo": {
+		"num": 782,
+		"name": "Jangmo-o",
+		"types": ["Dragon"],
+		"baseStats": { "hp": 45, "atk": 55, "def": 65, "spa": 45, "spd": 45, "spe": 45 },
+		"abilities": { "0": "Bulletproof", "1": "Soundproof", "H": "Overcoat" }
+    },
+	"hakamoo": {
+		"num": 783,
+		"name": "Hakamo-o",
+		"types": ["Dragon", "Fighting"],
+		"baseStats": { "hp": 55, "atk": 75, "def": 90, "spa": 65, "spd": 70, "spe": 65 },
+		"abilities": { "0": "Bulletproof", "1": "Soundproof", "H": "Overcoat" }
     },
     "cosmog": {
         "num": 789,
@@ -10877,6 +11143,13 @@
             "0": "Weak Armor",
             "H": "Perish Body"
         }
+    },
+    "mrrime": {
+		"num": 866,
+		"name": "Mr. Rime",
+		"types": ["Ice", "Psychic"],
+		"baseStats": { "hp": 80, "atk": 85, "def": 75, "spa": 110, "spd": 100, "spe": 70 },
+		"abilities": { "0": "Tangled Feet", "1": "Screen Cleaner", "H": "Ice Body" }
     },
     "milcery": {
         "num": 868,

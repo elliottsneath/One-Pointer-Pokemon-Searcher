@@ -38,15 +38,15 @@ class Ui_PokemonSearcher(object):
 
         self.horizontalLayout.addWidget(self.searchBar)
 
-        self.clearSearchButton = AnimatedHoverButton(self.centralwidget)
-        self.clearSearchButton.setObjectName(u"clearSearchButton")
+        self.clearFiltersButton = AnimatedHoverButton(self.centralwidget)
+        self.clearFiltersButton.setObjectName(u"clearFiltersButton")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.clearSearchButton.sizePolicy().hasHeightForWidth())
-        self.clearSearchButton.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.clearFiltersButton.sizePolicy().hasHeightForWidth())
+        self.clearFiltersButton.setSizePolicy(sizePolicy)
 
-        self.horizontalLayout.addWidget(self.clearSearchButton)
+        self.horizontalLayout.addWidget(self.clearFiltersButton)
 
         self.horizontalLayout.setStretch(0, 2)
         self.horizontalLayout.setStretch(1, 1)
@@ -55,6 +55,10 @@ class Ui_PokemonSearcher(object):
 
         self.filterLayout = QHBoxLayout()
         self.filterLayout.setObjectName(u"filterLayout")
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.filterLayout.addItem(self.horizontalSpacer_2)
+
 
         self.verticalLayout.addLayout(self.filterLayout)
 
@@ -224,7 +228,7 @@ class Ui_PokemonSearcher(object):
     def retranslateUi(self, PokemonSearcher):
         PokemonSearcher.setWindowTitle(QCoreApplication.translate("PokemonSearcher", u"MainWindow", None))
         self.searchBar.setPlaceholderText(QCoreApplication.translate("PokemonSearcher", u"Search Pokemon, Move, Type, Ability, etc...", None))
-        self.clearSearchButton.setText(QCoreApplication.translate("PokemonSearcher", u"Clear Filters", None))
+        self.clearFiltersButton.setText(QCoreApplication.translate("PokemonSearcher", u"Clear Filters", None))
         self.label_5.setText(QCoreApplication.translate("PokemonSearcher", u"Leave all blank to search for all:", None))
         self.pokemonCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Pokemon", None))
         self.typesCheckbox.setText(QCoreApplication.translate("PokemonSearcher", u"Types", None))

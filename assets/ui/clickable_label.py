@@ -1,6 +1,5 @@
-from PySide6.QtWidgets import QLabel, QApplication, QWidget, QHBoxLayout
+from PySide6.QtWidgets import QLabel
 from PySide6.QtCore import Signal, Qt
-import sys
 
 class ClickableLabel(QLabel):
     clicked = Signal()

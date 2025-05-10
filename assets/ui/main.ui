@@ -25,7 +25,7 @@
        </widget>
       </item>
       <item>
-       <widget class="AnimatedHoverButton" name="clearSearchButton">
+       <widget class="AnimatedHoverButton" name="clearFiltersButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
