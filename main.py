@@ -19,7 +19,6 @@ CONFIG_FILE_PATH = os.path.join(BASE_DIR, "data/config.json")
 
 """
 TODO:
-    Add favourites with config file
 """
 
 class MainWindow(QMainWindow, Ui_PokemonSearcher):
