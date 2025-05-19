@@ -1617,13 +1617,6 @@
             "H": "Aftermath"
         }
     },
-    "electrodehisui": {
-		"num": 101,
-		"name": "Electrode-Hisui",
-		"types": ["Electric", "Grass"],
-		"baseStats": { "hp": 60, "atk": 50, "def": 70, "spa": 80, "spd": 80, "spe": 150 },
-		"abilities": { "0": "Soundproof", "1": "Static", "H": "Aftermath" }
-    },
     "exeggcute": {
         "num": 102,
         "name": "Exeggcute",
